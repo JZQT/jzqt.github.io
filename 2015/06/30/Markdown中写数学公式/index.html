@@ -1,0 +1,1073 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Markdown中写数学公式 | 剑紫青天</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="剑紫青天">
+    
+
+    
+    <meta name="description" content="一些扩展的Markdown语法支持采用LaTex语法写数学公式，而在网页中使用Mathjax插件来显示数学公式。
+本教程介绍如何在Markdown中书写数学公式。
+插入数学公式在Markdown中插入数学公式的语法是$数学公式$和$$数学公式$$。
+行内公式是可以让公式在文中与文字或其他东西混编，不独占一行。
+
+示例
+  1质能方程$E = mc^2$
+
+显示
+
+质能方程$E = mc^2$">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Markdown中写数学公式">
+<meta property="og:url" content="http://jzqt.github.io/2015/06/30/Markdown中写数学公式/index.html">
+<meta property="og:site_name" content="剑紫青天">
+<meta property="og:description" content="一些扩展的Markdown语法支持采用LaTex语法写数学公式，而在网页中使用Mathjax插件来显示数学公式。
+本教程介绍如何在Markdown中书写数学公式。
+插入数学公式在Markdown中插入数学公式的语法是$数学公式$和$$数学公式$$。
+行内公式是可以让公式在文中与文字或其他东西混编，不独占一行。
+
+示例
+  1质能方程$E = mc^2$
+
+显示
+
+质能方程$E = mc^2$">
+<meta property="og:updated_time" content="2015-10-20T04:05:41.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Markdown中写数学公式">
+<meta name="twitter:description" content="一些扩展的Markdown语法支持采用LaTex语法写数学公式，而在网页中使用Mathjax插件来显示数学公式。
+本教程介绍如何在Markdown中书写数学公式。
+插入数学公式在Markdown中插入数学公式的语法是$数学公式$和$$数学公式$$。
+行内公式是可以让公式在文中与文字或其他东西混编，不独占一行。
+
+示例
+  1质能方程$E = mc^2$
+
+显示
+
+质能方程$E = mc^2$">
+
+    
+    <link rel="alternative" href="/atom.xml" title="剑紫青天" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/jzqt.png">
+    <link rel="apple-touch-icon-precomposed" href="/jzqt.png">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/jzqt.png" alt="剑紫青天" title="剑紫青天"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="剑紫青天">剑紫青天</a></h1>
+				<h2 class="blog-motto">三人行，必有我师焉；择其善者而从之，其不善者而改之</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:jzqt.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/06/30/Markdown中写数学公式/" title="Markdown中写数学公式" itemprop="url">Markdown中写数学公式</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="剑紫青天" target="_blank" itemprop="author">剑紫青天</a>
+		
+  <p class="article-time">
+    <time datetime="2015-06-30T06:58:13.000Z" itemprop="datePublished"> 发表于 2015-06-30</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#插入数学公式"><span class="toc-number">1.</span> <span class="toc-text">插入数学公式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#普通公式"><span class="toc-number">2.</span> <span class="toc-text">普通公式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#上下标"><span class="toc-number">3.</span> <span class="toc-text">上下标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#括号"><span class="toc-number">4.</span> <span class="toc-text">括号</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#分数"><span class="toc-number">5.</span> <span class="toc-text">分数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#开方"><span class="toc-number">6.</span> <span class="toc-text">开方</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#希腊字母"><span class="toc-number">7.</span> <span class="toc-text">希腊字母</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其他字符"><span class="toc-number">8.</span> <span class="toc-text">其他字符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#关系运算符"><span class="toc-number">8.1.</span> <span class="toc-text">关系运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#集合运算符"><span class="toc-number">8.2.</span> <span class="toc-text">集合运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对数运算符"><span class="toc-number">8.3.</span> <span class="toc-text">对数运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三角运算符"><span class="toc-number">8.4.</span> <span class="toc-text">三角运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#微积分运算符"><span class="toc-number">8.5.</span> <span class="toc-text">微积分运算符</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#未完待续"><span class="toc-number">9.</span> <span class="toc-text">未完待续</span></a></li></ol>
+		
+		</div>
+		
+		<p>一些扩展的<code>Markdown</code>语法支持采用<code>LaTex</code>语法写数学公式，而在网页中使用<code>Mathjax</code>插件来显示数学公式。</p>
+<p>本教程介绍<strong>如何在Markdown中书写数学公式</strong>。</p>
+<h1 id="插入数学公式">插入数学公式</h1><p>在Markdown中插入数学公式的语法是<code>$数学公式$</code>和<code>$$数学公式$$</code>。</p>
+<p><strong>行内公式</strong>是可以让公式在文中与文字或其他东西混编，不独占一行。</p>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">质能方程$E = mc^2$</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>显示</strong></p>
+<blockquote>
+<p>质能方程$E = mc^2$</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>独立公式</strong>使公式单独占一行，不与文中其他文字等混编。</p>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">质能方程$$E = mc^2$$</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>显示</strong></p>
+<blockquote>
+<p>质能方程$$E = mc^2$$</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="普通公式">普通公式</h1><p>普通的加减乘除数学公式的输入方法与平常的书写一样。</p>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$x = 100 * y + z - 10 / 33 + 10 % 3$$</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>显示</strong></p>
+<blockquote>
+<p>$$x = 100 * y + z - 10 / 33 + 10 % 3$$</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="上下标">上下标</h1><p>使用<code>^</code>来表示上标，<code>_</code>来表示下标，同时如果上下标的内容多于一个字符，可以使用<code>{}</code>来将这些内容括起来当做一个整体。<br>与此同时，上下标是可以嵌套的。</p>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$x = a<span class="emphasis">_&#123;1&#125;^n + a_</span>&#123;2&#125;^n + a_&#123;3&#125;^n$$</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>显示</strong></p>
+<blockquote>
+<p>$$x = a_{1}^n + a_{2}^n + a_{3}^n$$</p>
+</blockquote>
+</li>
+</ul>
+<p>如果希望左右两边都能有上下标，可以使用<code>\sideset</code>语法</p>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sideset&#123;^1<span class="emphasis">_2&#125;&#123;^3_</span>4&#125;A$$</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>显示</strong></p>
+<blockquote>
+<p>$$\sideset{^1_2}{^3_4}A$$</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="括号">括号</h1><p><code>()</code>，<code>[]</code>和<code>|</code>都表示它们自己，但是<code>{}</code>因为有特殊作用因此当需要显示大括号时一般使用<code>\lbrace \rbrace</code>来表示。</p>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$f(x, y) = 100 <span class="bullet">* \lbrace[(x + y) *</span> 3] - 5\rbrace$$</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>显示</strong></p>
+<blockquote>
+<p>$$f(x, y) = 100 * \lbrace[(x + y) * 3] - 5\rbrace$$</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="分数">分数</h1><p>分数使用<code>\frac{分母}{分子}</code>这样的语法，不过推荐使用<code>\cfrac</code>来代替<code>\frac</code>，显示公式不会太挤。</p>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\frac&#123;1&#125;&#123;3&#125; 与 \cfrac&#123;1&#125;&#123;3&#125;$$</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>显示</strong></p>
+<blockquote>
+<p>$$\frac{1}{3} 与 \cfrac{1}{3}$$</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="开方">开方</h1><p>开方使用<code>\sqrt[次数]{被开方数}</code>这样的语法</p>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$$\sqrt[3]&#123;X&#125;$$</span><br><span class="line">$$\sqrt&#123;5 - x&#125;$$</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>显示</strong></p>
+<blockquote>
+<p>$$\sqrt[3]{X}$$<br>$$\sqrt{5 - x}$$</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="希腊字母">希腊字母</h1><p>见下表</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">代码</th>
+<th style="text-align:center">大写</th>
+<th style="text-align:center">代码</th>
+<th style="text-align:left">小写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>A</code></td>
+<td style="text-align:center">$A$</td>
+<td style="text-align:center"><code>\alpha</code></td>
+<td style="text-align:left">$\alpha$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>B</code></td>
+<td style="text-align:center">$B$</td>
+<td style="text-align:center"><code>\beta</code></td>
+<td style="text-align:left">$\beta$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\Gamma</code></td>
+<td style="text-align:center">$\Gamma$</td>
+<td style="text-align:center"><code>\gamma</code></td>
+<td style="text-align:left">$\gamma$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\Delta</code></td>
+<td style="text-align:center">$\Delta$</td>
+<td style="text-align:center"><code>\delta</code></td>
+<td style="text-align:left">$\delta$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>E</code></td>
+<td style="text-align:center">$E$</td>
+<td style="text-align:center"><code>\epsilon</code></td>
+<td style="text-align:left">$\epsilon$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>Z</code></td>
+<td style="text-align:center">$Z$</td>
+<td style="text-align:center"><code>\zeta</code></td>
+<td style="text-align:left">$\zeta$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>H</code></td>
+<td style="text-align:center">$H$</td>
+<td style="text-align:center"><code>\eta</code></td>
+<td style="text-align:left">$\eta$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\Theta</code></td>
+<td style="text-align:center">$\Theta$</td>
+<td style="text-align:center"><code>\theta</code></td>
+<td style="text-align:left">$\theta$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>I</code></td>
+<td style="text-align:center">$I$</td>
+<td style="text-align:center"><code>\iota</code></td>
+<td style="text-align:left">$\iota$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>K</code></td>
+<td style="text-align:center">$K$</td>
+<td style="text-align:center"><code>\kappa</code></td>
+<td style="text-align:left">$\kappa$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\Lambda</code></td>
+<td style="text-align:center">$\Lambda$</td>
+<td style="text-align:center"><code>\lambda</code></td>
+<td style="text-align:left">$\lambda$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>M</code></td>
+<td style="text-align:center">$M$</td>
+<td style="text-align:center"><code>\mu</code></td>
+<td style="text-align:left">$\mu$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>N</code></td>
+<td style="text-align:center">$N$</td>
+<td style="text-align:center"><code>\nu</code></td>
+<td style="text-align:left">$\nu$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\Xi</code></td>
+<td style="text-align:center">$\Xi$</td>
+<td style="text-align:center"><code>\xi</code></td>
+<td style="text-align:left">$\xi$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>O</code></td>
+<td style="text-align:center">$O$</td>
+<td style="text-align:center"><code>\omicron</code></td>
+<td style="text-align:left">$\omicron$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\Pi</code></td>
+<td style="text-align:center">$\Pi$</td>
+<td style="text-align:center"><code>\pi</code></td>
+<td style="text-align:left">$\pi$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>P</code></td>
+<td style="text-align:center">$P$</td>
+<td style="text-align:center"><code>\rho</code></td>
+<td style="text-align:left">$\rho$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\Sigma</code></td>
+<td style="text-align:center">$\Sigma$</td>
+<td style="text-align:center"><code>\sigma</code></td>
+<td style="text-align:left">$\sigma$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>T</code></td>
+<td style="text-align:center">$T$</td>
+<td style="text-align:center"><code>\tau</code></td>
+<td style="text-align:left">$\tau$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\Upsilon</code></td>
+<td style="text-align:center">$\Upsilon$</td>
+<td style="text-align:center"><code>\upsilon</code></td>
+<td style="text-align:left">$\upsilon$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\Phi</code></td>
+<td style="text-align:center">$\Phi$</td>
+<td style="text-align:center"><code>\phi</code></td>
+<td style="text-align:left">$\phi$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>X</code></td>
+<td style="text-align:center">$X$</td>
+<td style="text-align:center"><code>\chi</code></td>
+<td style="text-align:left">$\chi$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\Psi</code></td>
+<td style="text-align:center">$\Psi$</td>
+<td style="text-align:center"><code>\psi</code></td>
+<td style="text-align:left">$\psi$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\Omega</code></td>
+<td style="text-align:center">$\Omega$</td>
+<td style="text-align:center"><code>\omega</code></td>
+<td style="text-align:left">$\omega$</td>
+</tr>
+</tbody>
+</table>
+<h1 id="其他字符">其他字符</h1><h2 id="关系运算符">关系运算符</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:left">代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\pm$</td>
+<td style="text-align:left"><code>\pm</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\times$</td>
+<td style="text-align:left"><code>\times</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\div$</td>
+<td style="text-align:left"><code>\div</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\mid$</td>
+<td style="text-align:left"><code>\mid</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\nmid$</td>
+<td style="text-align:left"><code>\nmid</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\cdot$</td>
+<td style="text-align:left"><code>\cdot</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\circ$</td>
+<td style="text-align:left"><code>\circ</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\ast$</td>
+<td style="text-align:left"><code>\ast</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\bigodot$</td>
+<td style="text-align:left"><code>\bigodot</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\bigotimes$</td>
+<td style="text-align:left"><code>\bigotimes</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\bigoplus$</td>
+<td style="text-align:left"><code>\bigoplus</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\leq$</td>
+<td style="text-align:left"><code>\leq</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\geq$</td>
+<td style="text-align:left"><code>\geq</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\neq$</td>
+<td style="text-align:left"><code>\neq</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\approx$</td>
+<td style="text-align:left"><code>\approx</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\equiv$</td>
+<td style="text-align:left"><code>\equiv</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\sum$</td>
+<td style="text-align:left"><code>\sum</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\prod$</td>
+<td style="text-align:left"><code>\prod</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\coprod$</td>
+<td style="text-align:left"><code>\coprod</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="集合运算符">集合运算符</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:left">代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\emptyset$</td>
+<td style="text-align:left"><code>\emptyset</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\in$</td>
+<td style="text-align:left"><code>\in</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\notin$</td>
+<td style="text-align:left"><code>\notin</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\subset$</td>
+<td style="text-align:left"><code>\subset</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\supset$</td>
+<td style="text-align:left"><code>\supset</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\subseteq$</td>
+<td style="text-align:left"><code>\subseteq</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\supseteq$</td>
+<td style="text-align:left"><code>\supseteq</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\bigcap$</td>
+<td style="text-align:left"><code>\bigcap</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\bigcup$</td>
+<td style="text-align:left"><code>\bigcup</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\bigvee$</td>
+<td style="text-align:left"><code>\bigvee</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\bigwedge$</td>
+<td style="text-align:left"><code>\bigwedge</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\biguplus$</td>
+<td style="text-align:left"><code>\biguplus</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\bigsqcup$</td>
+<td style="text-align:left"><code>\bigsqcup</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="对数运算符">对数运算符</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:left">代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\log$</td>
+<td style="text-align:left"><code>\log</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\lg$</td>
+<td style="text-align:left"><code>\lg</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\ln$</td>
+<td style="text-align:left"><code>\ln</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="三角运算符">三角运算符</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:left">代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\bot$</td>
+<td style="text-align:left"><code>\bot</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\angle$</td>
+<td style="text-align:left"><code>\angle</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\sin$</td>
+<td style="text-align:left"><code>\sin</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\cos$</td>
+<td style="text-align:left"><code>\cos</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\tan$</td>
+<td style="text-align:left"><code>\tan</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\cot$</td>
+<td style="text-align:left"><code>\cot</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\sec$</td>
+<td style="text-align:left"><code>\sec</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\csc$</td>
+<td style="text-align:left"><code>\csc</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="微积分运算符">微积分运算符</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:left">代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\prime$</td>
+<td style="text-align:left"><code>\prime</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\int$</td>
+<td style="text-align:left"><code>\int</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\iint$</td>
+<td style="text-align:left"><code>\iint</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\iiint$</td>
+<td style="text-align:left"><code>\iiint</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\iiiint$</td>
+<td style="text-align:left"><code>\iiiint</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\oint$</td>
+<td style="text-align:left"><code>\oint</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\lim$</td>
+<td style="text-align:left"><code>\lim</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\infty$</td>
+<td style="text-align:left"><code>\infty</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\nabla$</td>
+<td style="text-align:left"><code>\nabla</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\mathrm{d}$</td>
+<td style="text-align:left"><code>\mathrm{d}</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="未完待续">未完待续</h1><p><strong>……</strong></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/备忘/">备忘</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/LaTex/">LaTex</a><a href="/tags/Markdown/">Markdown</a><a href="/tags/Mathjax/">Mathjax</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://jzqt.github.io/2015/06/30/Markdown中写数学公式/" data-title="Markdown中写数学公式 | 剑紫青天" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/07/21/ACM图论之存图方式/" title="ACM图论之存图方式">
+  <strong>上一篇：</strong><br/>
+  <span>
+  ACM图论之存图方式</span>
+</a>
+</div>
+
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2015/06/30/Markdown中写数学公式/" data-title="Markdown中写数学公式" data-url="http://jzqt.github.io/2015/06/30/Markdown中写数学公式/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#插入数学公式"><span class="toc-number">1.</span> <span class="toc-text">插入数学公式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#普通公式"><span class="toc-number">2.</span> <span class="toc-text">普通公式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#上下标"><span class="toc-number">3.</span> <span class="toc-text">上下标</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#括号"><span class="toc-number">4.</span> <span class="toc-text">括号</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#分数"><span class="toc-number">5.</span> <span class="toc-text">分数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#开方"><span class="toc-number">6.</span> <span class="toc-text">开方</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#希腊字母"><span class="toc-number">7.</span> <span class="toc-text">希腊字母</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#其他字符"><span class="toc-number">8.</span> <span class="toc-text">其他字符</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#关系运算符"><span class="toc-number">8.1.</span> <span class="toc-text">关系运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#集合运算符"><span class="toc-number">8.2.</span> <span class="toc-text">集合运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#对数运算符"><span class="toc-number">8.3.</span> <span class="toc-text">对数运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三角运算符"><span class="toc-number">8.4.</span> <span class="toc-text">三角运算符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#微积分运算符"><span class="toc-number">8.5.</span> <span class="toc-text">微积分运算符</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#未完待续"><span class="toc-number">9.</span> <span class="toc-text">未完待续</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/ACM/" title="ACM">ACM<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Witcoder/" title="Witcoder">Witcoder<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/备忘/" title="备忘">备忘<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Witcoder/心得/" title="心得">心得<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/ACM/算法与数据结构/" title="算法与数据结构">算法与数据结构<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Witcoder/随笔/" title="随笔">随笔<sup>2</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Witcoder开发之路/" title="Witcoder开发之路">Witcoder开发之路<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Markdown/" title="Markdown">Markdown<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Mathjax/" title="Mathjax">Mathjax<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/LaTex/" title="LaTex">LaTex<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ACM/" title="ACM">ACM<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/图论/" title="图论">图论<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/算法与数据结构/" title="算法与数据结构">算法与数据结构<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 三人行，必有我师焉 <br/>
+			择其善者而从之，其不善者而改之</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		<a href="https://github.com/JZQT" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		<a href="http://www.zhihu.com/people/JZQT" target="_blank" class="icon-zhihu" title="知乎"></a>
+		
+		
+		
+		<a href="mailto:jzqt@witcoder.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
+		
+		<a href="/about" target="_blank" title="剑紫青天">剑紫青天</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"jzqt"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F589187d3b72447ce21874446443a6818' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

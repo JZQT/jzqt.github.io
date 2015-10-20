@@ -1,0 +1,635 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>ACM图论之存图方式 | 剑紫青天</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+    
+    <meta name="author" content="剑紫青天">
+    
+
+    
+    <meta name="description" content="对于ACM图论方面的题目总是免不了首先要建图存图，使用合适的存图方式不但是AC的必要条件，解题事半功倍。
+以下主要分析三种常见的存图方式的优缺点以及代码实现
+
+邻接矩阵
+邻接表
+链式前向星
+
+邻接矩阵邻接矩阵是三种存图方式中最简单也最为暴力的一种存图方式了。
+存图思想使用一个矩阵来描述一个图，对于矩阵的第i行第j列的值，表示编号为i的顶点到编号为j的顶点的权值。
+代码实现对于邻接矩阵来说，它的代码">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ACM图论之存图方式">
+<meta property="og:url" content="http://jzqt.github.io/2015/07/21/ACM图论之存图方式/index.html">
+<meta property="og:site_name" content="剑紫青天">
+<meta property="og:description" content="对于ACM图论方面的题目总是免不了首先要建图存图，使用合适的存图方式不但是AC的必要条件，解题事半功倍。
+以下主要分析三种常见的存图方式的优缺点以及代码实现
+
+邻接矩阵
+邻接表
+链式前向星
+
+邻接矩阵邻接矩阵是三种存图方式中最简单也最为暴力的一种存图方式了。
+存图思想使用一个矩阵来描述一个图，对于矩阵的第i行第j列的值，表示编号为i的顶点到编号为j的顶点的权值。
+代码实现对于邻接矩阵来说，它的代码">
+<meta property="og:image" content="http://jzqt.github.io/2015/07/21/ACM图论之存图方式/links&matrix.png">
+<meta property="og:updated_time" content="2015-10-19T16:17:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ACM图论之存图方式">
+<meta name="twitter:description" content="对于ACM图论方面的题目总是免不了首先要建图存图，使用合适的存图方式不但是AC的必要条件，解题事半功倍。
+以下主要分析三种常见的存图方式的优缺点以及代码实现
+
+邻接矩阵
+邻接表
+链式前向星
+
+邻接矩阵邻接矩阵是三种存图方式中最简单也最为暴力的一种存图方式了。
+存图思想使用一个矩阵来描述一个图，对于矩阵的第i行第j列的值，表示编号为i的顶点到编号为j的顶点的权值。
+代码实现对于邻接矩阵来说，它的代码">
+
+    
+    <link rel="alternative" href="/atom.xml" title="剑紫青天" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/jzqt.png">
+    <link rel="apple-touch-icon-precomposed" href="/jzqt.png">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+</head>
+
+  <body>
+    <header>
+      
+<div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/jzqt.png" alt="剑紫青天" title="剑紫青天"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="剑紫青天">剑紫青天</a></h1>
+				<h2 class="blog-motto">三人行，必有我师焉；择其善者而从之，其不善者而改之</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/">主页</a></li>
+					
+						<li><a href="/archives">归档</a></li>
+					
+						<li><a href="/about">关于</a></li>
+					
+					<li>
+ 					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:jzqt.github.io">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+  
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2015/07/21/ACM图论之存图方式/" title="ACM图论之存图方式" itemprop="url">ACM图论之存图方式</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="剑紫青天" target="_blank" itemprop="author">剑紫青天</a>
+		
+  <p class="article-time">
+    <time datetime="2015-07-20T16:00:00.000Z" itemprop="datePublished"> 发表于 2015-07-21</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		
+			<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#邻接矩阵"><span class="toc-number">1.</span> <span class="toc-text">邻接矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#存图思想"><span class="toc-number">1.1.</span> <span class="toc-text">存图思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码实现"><span class="toc-number">1.2.</span> <span class="toc-text">代码实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#优点"><span class="toc-number">1.3.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缺点"><span class="toc-number">1.4.</span> <span class="toc-text">缺点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#邻接表"><span class="toc-number">2.</span> <span class="toc-text">邻接表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#存图思想-1"><span class="toc-number">2.1.</span> <span class="toc-text">存图思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码实现-1"><span class="toc-number">2.2.</span> <span class="toc-text">代码实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#优点-1"><span class="toc-number">2.3.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缺点-1"><span class="toc-number">2.4.</span> <span class="toc-text">缺点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#链式前向星"><span class="toc-number">3.</span> <span class="toc-text">链式前向星</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
+		
+		</div>
+		
+		<p>对于ACM图论方面的题目总是免不了首先要建图存图，使用合适的存图方式不但是AC的必要条件，解题事半功倍。</p>
+<p>以下主要分析三种常见的存图方式的优缺点以及代码实现</p>
+<ul>
+<li>邻接矩阵</li>
+<li>邻接表</li>
+<li>链式前向星</li>
+</ul>
+<h1 id="邻接矩阵">邻接矩阵</h1><p><strong>邻接矩阵</strong>是三种存图方式中最<strong>简单</strong>也最为<strong>暴力</strong>的一种存图方式了。</p>
+<h2 id="存图思想">存图思想</h2><p>使用一个矩阵来描述一个图，对于矩阵的第<code>i</code>行第<code>j</code>列的值，表示编号为<code>i</code>的顶点到编号为<code>j</code>的顶点的权值。</p>
+<h2 id="代码实现">代码实现</h2><p>对于邻接矩阵来说，它的代码实现都十分简单，二维数组就可以了。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 最大顶点数</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> V = <span class="number">1000</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 邻接矩阵的定义</span></span><br><span class="line"><span class="comment">// mat[i][j] 表示 顶点`i`到顶点`j`的权值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> mat[V][V];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 邻接矩阵的初始化操作</span></span><br><span class="line"><span class="comment">// 假设权值为零表示没有该边</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">memset</span>(mat, <span class="number">0</span>, <span class="keyword">sizeof</span>(mat))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 增加边</span></span><br><span class="line"><span class="comment">// 新增顶点`i`到顶点`j`的边，权值为`w`</span></span><br><span class="line"></span><br><span class="line">mat[i][j] = w;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除边</span></span><br><span class="line"><span class="comment">// 删除顶点`i`到顶点`j`的边</span></span><br><span class="line"></span><br><span class="line">mat[i][j] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 查询边</span></span><br><span class="line"><span class="comment">// 查询顶点`i`到顶点`j`的边权</span></span><br><span class="line"></span><br><span class="line">mat[i][j];</span><br></pre></td></tr></table></figure>
+<h2 id="优点">优点</h2><p>使用邻接矩阵来进行建图存图有以下优点</p>
+<ul>
+<li><p><strong>简单易学</strong></p>
+<p>  这个肯定不用多说，哪怕是没学过线性代数的童鞋也很容易理解这样的存图方式。</p>
+</li>
+<li><p><strong>代码易写，简单好操作</strong></p>
+<p>  上面的代码实现已经展示了要定义这个数据结构以及实现初始化，增加删除边等操作有多么的简单。</p>
+</li>
+<li><p><strong>对已确定的边进行操作，效率高</strong></p>
+<p>  确定边（已知两顶点编号）要进行增加或删除边（或者说更改边权）以及查询边权等操作，时间复杂度为$O(1)$。</p>
+</li>
+<li><p><strong>易处理重边</strong></p>
+<p>  你可以随时覆盖掉重边，可以自己实现存储最新的边，权值最大的边或权值最小的边等。<br>  当然，如果你非要使用邻接矩阵存图还要存重边也不是不可以。</p>
+</li>
+</ul>
+<h2 id="缺点">缺点</h2><p>邻接矩阵存图虽然简单优雅，但是它的一些缺点却几乎是致命的。</p>
+<ul>
+<li><p><strong>过高的空间复杂度</strong></p>
+<p>  对于顶点数<code>V</code>，邻接矩阵存图的<strong>空间复杂度高达$O(V^2)$</strong>，<strong>顶点数</strong>上了<strong>一万</strong>可以不用考虑这种存图方式了。<br>  <strong>对于稀疏图来说，邻接矩阵存图内存浪费太严重，这也是邻接矩阵存图在ACM题目中十分罕见的根本原因。</strong></p>
+</li>
+<li><p><strong>对于不确定边的查询效率一般</strong></p>
+<p>  比如，我找个编号为<code>1</code>出发的第一条边我还要一条条边判断是否存在（权值是否为<code>0</code>）。</p>
+</li>
+</ul>
+<h1 id="邻接表">邻接表</h1><p>邻接表在三种常用的存图方式中属于较为<strong>中庸</strong>和普遍的存图方式了，缺点不致命，优点不明显。</p>
+<h2 id="存图思想-1">存图思想</h2><p><strong>邻接矩阵</strong>对于每个顶点使用<strong>定长的数组</strong>来存储以该点出发的边的情况。第<code>i</code>个数组的第<code>j</code>个值存储的是从顶点<code>i</code>到顶点<code>j</code>的边的权值。<br>而<strong>邻接表</strong>则是对于每个顶点使用<strong>不定长的链表</strong>来存储以该点出发的边的情况。因此对于第<code>i</code>个链表的第<code>j</code>个值实际上存储的是从编号为<code>i</code>的顶点出发的第<code>j</code>条边的情况。</p>
+<p><strong>一般来说，如果有边权的话，邻接表的链表存储的是一个结构体，这个结构体存储该边的终点以及边权。</strong></p>
+<p>下面给个邻接表与邻接矩阵存图的示例比较。</p>
+<img src="/2015/07/21/ACM图论之存图方式/links&matrix.png" alt="links&matrix.png" title="">
+<h2 id="代码实现-1">代码实现</h2><p>在ACM题目中，动态的数据结构一般是不被推荐的，因为动态开辟内存比较消耗时间，且写起来复杂容易出错。<br>大部分情况我们使用C++STL里的<code>vector</code>作为链表来实现图的邻接表。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 最大顶点数</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> V = <span class="number">100000</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// vector实现的邻接表的定义</span></span><br><span class="line"><span class="comment">// 不考虑边权，存储类型为int型</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; e[V];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 邻接表的初始化操作</span></span><br><span class="line"><span class="comment">// 将起点为`i`的边链表全部清空</span></span><br><span class="line"></span><br><span class="line">e[i].clear();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 增加边</span></span><br><span class="line"><span class="comment">// 新增顶点`i`到顶点`j`的边</span></span><br><span class="line"></span><br><span class="line">e[i].push_back(j);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 查询边</span></span><br><span class="line"></span><br><span class="line">e[i][<span class="number">0</span>];    <span class="comment">// 查询以`i`为起点的第一条边`i-&gt;e[i][0]`</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;(<span class="keyword">int</span>)e[i].size(); ++j) &#123;</span><br><span class="line">    <span class="keyword">if</span> (e[i][j] == k) &#123;     <span class="comment">// 查询边`i-&gt;k`</span></span><br><span class="line">        <span class="comment">// do something.</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="优点-1">优点</h2><ul>
+<li><p><strong>较为简单易学</strong></p>
+<p>  相比邻接矩阵，无非是数组转链表加上存储值的意义不同而已，不需要转太大的弯。</p>
+</li>
+<li><p><strong>代码易写，不复杂</strong></p>
+<p>  代码实现已经演示过了，较简单，不容易写错。</p>
+</li>
+<li><p><strong>内存利用率高</strong></p>
+<p>  对于顶点数<code>V</code>与边数<code>E</code>，<strong>空间复杂度为$O(V+E)$</strong>。能较好处理稀疏图的存储。</p>
+</li>
+<li><p><strong>对不确定边的操作方便效率也不错</strong></p>
+<p>  比如，要遍历从某点出发的所有边，不会像邻接矩阵一样可能会遍历到不存在的边。</p>
+</li>
+</ul>
+<h2 id="缺点-1">缺点</h2><ul>
+<li><p><strong>重边不好处理</strong></p>
+<p>  <strong>判重比较麻烦</strong>，还要遍历已有的边，不能直接判断。<br>  一般情况下使用邻接表存图是会存储重边的，不会做重边的判断。<br>  所以如果要解决重边的影响一般不在存边的情况下做文章。</p>
+</li>
+<li><p><strong>对确定边的操作效率不高</strong></p>
+<p>  比如对于给定<code>i-&gt;j</code>的边要进行查询或修改等操作只有通过遍历这种方式找到了。</p>
+</li>
+</ul>
+<h1 id="链式前向星">链式前向星</h1><p>未完待续……</p>
+<h1 id="总结">总结</h1><p>对于<strong>邻接矩阵存图</strong>来说，由于<strong>内存消耗</strong>的局限性，它的<strong>适用范围十分狭窄</strong>，几乎只能在简单图论题目中见到。</p>
+<p><strong>邻接表存图</strong>是<strong>最为常见</strong>的一种，绝大部分采用C++STL中的<code>vector</code>实现，一般情况下几乎所有图论题目都能使用该存图方式。</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+<div class="article-catetags">
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/ACM/">ACM</a>►<a class="article-category-link" href="/categories/ACM/算法与数据结构/">算法与数据结构</a>
+</div>
+
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/ACM/">ACM</a><a href="/tags/图论/">图论</a><a href="/tags/算法与数据结构/">算法与数据结构</a>
+  </div>
+
+</div>
+
+
+
+	<div class="article-share" id="share">
+	
+	  <div data-url="http://jzqt.github.io/2015/07/21/ACM图论之存图方式/" data-title="ACM图论之存图方式 | 剑紫青天" data-tsina="null" class="share clearfix">
+	  </div>
+	
+	</div>
+
+
+</footer>
+
+   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2015/10/20/Witcoder开发之路/" title="Witcoder开发之路">
+  <strong>上一篇：</strong><br/>
+  <span>
+  Witcoder开发之路</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2015/06/30/Markdown中写数学公式/"  title="Markdown中写数学公式">
+ <strong>下一篇：</strong><br/> 
+ <span>Markdown中写数学公式
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section id="comments" class="comment">
+	<div class="ds-thread" data-thread-key="2015/07/21/ACM图论之存图方式/" data-title="ACM图论之存图方式" data-url="http://jzqt.github.io/2015/07/21/ACM图论之存图方式/"></div>
+</section>
+
+
+</div>  
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+ 
+ <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#邻接矩阵"><span class="toc-number">1.</span> <span class="toc-text">邻接矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#存图思想"><span class="toc-number">1.1.</span> <span class="toc-text">存图思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码实现"><span class="toc-number">1.2.</span> <span class="toc-text">代码实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#优点"><span class="toc-number">1.3.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缺点"><span class="toc-number">1.4.</span> <span class="toc-text">缺点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#邻接表"><span class="toc-number">2.</span> <span class="toc-text">邻接表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#存图思想-1"><span class="toc-number">2.1.</span> <span class="toc-text">存图思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码实现-1"><span class="toc-number">2.2.</span> <span class="toc-text">代码实现</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#优点-1"><span class="toc-number">2.3.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缺点-1"><span class="toc-number">2.4.</span> <span class="toc-text">缺点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#链式前向星"><span class="toc-number">3.</span> <span class="toc-text">链式前向星</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#总结"><span class="toc-number">4.</span> <span class="toc-text">总结</span></a></li></ol>
+ 
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+		  
+			<li><a href="/categories/ACM/" title="ACM">ACM<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Witcoder/" title="Witcoder">Witcoder<sup>3</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/备忘/" title="备忘">备忘<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Witcoder/心得/" title="心得">心得<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/ACM/算法与数据结构/" title="算法与数据结构">算法与数据结构<sup>1</sup></a></li>
+		  
+		
+		  
+			<li><a href="/categories/Witcoder/随笔/" title="随笔">随笔<sup>2</sup></a></li>
+		  
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			
+				<li><a href="/tags/Witcoder开发之路/" title="Witcoder开发之路">Witcoder开发之路<sup>3</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Markdown/" title="Markdown">Markdown<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/Mathjax/" title="Mathjax">Mathjax<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/LaTex/" title="LaTex">LaTex<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ACM/" title="ACM">ACM<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/图论/" title="图论">图论<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/算法与数据结构/" title="算法与数据结构">算法与数据结构<sup>1</sup></a></li>
+			
+		
+		</ul>
+</div>
+
+
+  <div class="linkslist">
+  <p class="asidetitle">友情链接</p>
+    <ul>
+        
+    </ul>
+</div>
+
+  
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<section class="info">
+		<p> 三人行，必有我师焉 <br/>
+			择其善者而从之，其不善者而改之</p>
+	</section>
+	 
+	<div class="social-font" class="clearfix">
+		
+		
+		<a href="https://github.com/JZQT" target="_blank" class="icon-github" title="github"></a>
+		
+		
+		
+		
+		
+		
+		
+		<a href="http://www.zhihu.com/people/JZQT" target="_blank" class="icon-zhihu" title="知乎"></a>
+		
+		
+		
+		<a href="mailto:jzqt@witcoder.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+	</div>
+			
+		
+
+		<p class="copyright">
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2015 
+		
+		<a href="/about" target="_blank" title="剑紫青天">剑紫青天</a>
+		
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.0.3.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/jquery.qrcode-0.12.0.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+  
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else{
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  c.click(function(){
+    ta.css('display', 'block').addClass('fadeIn');
+  });
+  o.click(function(){
+    ta.css('display', 'none');
+  });
+  $(window).scroll(function(){
+    ta.css("top",Math.max(140,320-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina'),
+      description = $this.attr('description');
+  var html = [
+  '<div class="hoverqrcode clearfix"></div>',
+  '<a class="overlay" id="qrcode"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="微信"></a>',
+  '<a href="http://widget.renren.com/dialog/share?resourceUrl=' + encodedUrl + '&srcUrl=' + encodedUrl + '&title=' + title +'" class="article-share-renren" target="_blank" title="人人"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="微博"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+
+  $('.hoverqrcode').hide();
+
+  var myWidth = 0;
+  function updatehoverqrcode(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+    var qrsize = myWidth > 1024 ? 200:100;
+    var options = {render: 'image', size: qrsize, fill: '#2ca6cb', text: url, radius: 0.5, quiet: 1};
+    var p = $('.article-share-qrcode').position();
+    $('.hoverqrcode').empty().css('width', qrsize).css('height', qrsize)
+                          .css('left', p.left-qrsize/2+20).css('top', p.top-qrsize-10)
+                          .qrcode(options);
+  };
+  $(window).resize(function(){
+    $('.hoverqrcode').hide();
+  });
+  $('.article-share-qrcode').click(function(){
+    updatehoverqrcode();
+    $('.hoverqrcode').toggle();
+  });
+  $('.article-share-qrcode').hover(function(){}, function(){
+      $('.hoverqrcode').hide();
+  });
+});   
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"jzqt"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.article-content').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox')) return;
+      var alt = this.alt;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'article' + i);
+    });
+  });
+  if($.fancybox){
+    $('.fancybox').fancybox();
+  }
+}); 
+</script>
+
+
+
+<!-- Analytics Begin -->
+
+
+
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F589187d3b72447ce21874446443a6818' type='text/javascript'%3E%3C/script%3E"));
+</script>
+
+
+
+<!-- Analytics End -->
+
+<!-- Totop Begin -->
+
+	<div id="totop">
+	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	</div>
+	<script src="/js/totop.js"></script>
+
+<!-- Totop End -->
+
+<!-- MathJax Begin -->
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+<!-- MathJax End -->
+
+<!-- Tiny_search Begin -->
+
+<!-- Tiny_search End -->
+
+  </body>
+</html>

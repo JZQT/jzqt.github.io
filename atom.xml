@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[剑紫青天]]></title>
+  <subtitle><![CDATA[三人行，必有我师焉；择其善者而从之，其不善者而改之]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://jzqt.github.io/"/>
+  <updated>2015-10-20T04:30:42.000Z</updated>
+  <id>http://jzqt.github.io/</id>
+  
+  <author>
+    <name><![CDATA[剑紫青天]]></name>
+    <email><![CDATA[561484726@qq.com]]></email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[色彩的纠结（比赛训练状态标签）]]></title>
+    <link href="http://jzqt.github.io/2015/10/20/%E8%89%B2%E5%BD%A9%E7%9A%84%E7%BA%A0%E7%BB%93%EF%BC%88%E6%AF%94%E8%B5%9B%E8%AE%AD%E7%BB%83%E7%8A%B6%E6%80%81%E6%A0%87%E7%AD%BE%EF%BC%89/"/>
+    <id>http://jzqt.github.io/2015/10/20/色彩的纠结（比赛训练状态标签）/</id>
+    <published>2015-10-20T04:17:08.000Z</published>
+    <updated>2015-10-20T04:30:42.000Z</updated>
+    <content type="html"><![CDATA[<p>Witcoder的比赛训练有三种状态。<br>分别是<code>未开始</code>，<code>进行中</code>和<code>已结束</code>。</p>
+<p>可是，在选择颜色代表它们的时候，我们陷入了纠结。<br>下面是几种考虑的方案。</p>
+<p><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019152005.png" alt=""><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019152503.png" alt=""><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019152813.png" alt=""><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019153135.png" alt=""></p>
+<p>后面还有很多，就不按照颜色排列组合一一上图了。反正就是这样。</p>
+<p>对于<code>已结束</code>这个标签，基本是比较好选择的。最开始我们选择的是红色的标签。后来我们看了下Bootstrap里面的标签，发现其实还有个灰色的默认标签。我觉得可能灰色更加好，因为<strong>红色的标签感觉给人以强调，禁止，重点的意思</strong>，而<strong>灰色给人以沉闷，没有生机的感觉</strong>，正好能匹配<code>已结束</code>的意思。<br>这个搭配在团队里有获得一致的认可。</p>
+<p><code>进行中</code>这个标签稍微有一点点争议，到底是选择蓝色还是绿色还真不好说。我对自己的审美一向都不敢恭维，选择蓝色感觉标签能更加清楚直接地被看到，而选择绿色，从逻辑上来说，<strong>绿色有通行，成功的意味</strong>，正好只有在比赛训练状态在<code>进行中</code>的时候才可以开始做题。<br>最后选择还是使用绿色标签来表示<code>进行中</code>，毕竟感觉<strong>逻辑</strong>才是最重要的，一群理科生啊唉。</p>
+<p><code>未开始</code>是最坑爹的了。完全不知道该选什么，对于该什么颜色的逻辑也是非常不明确的。最后我暂定为淡蓝色。毕竟<code>未开始</code>我想应该用淡一点的颜色吧（我也不知道这是什么想法）。</p>
+<p>虽然过程波折重重，总的来说团队成员都没有什么异议。最后颜色就暂定为这样。<br><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019152005.png" alt=""></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Witcoder的比赛训练有三种状态。<br>分别是<code>未开始</code>，<code>进行中</code>和<code>已结束</code>。</p>
+<p>可是，在选择颜色代表它们的时候，我们陷入了纠结。<br>下面是几种考虑的方案。</p>
+<p><img ]]>
+    </summary>
+    
+      <category term="Witcoder开发之路" scheme="http://jzqt.github.io/tags/Witcoder%E5%BC%80%E5%8F%91%E4%B9%8B%E8%B7%AF/"/>
+    
+      <category term="Witcoder" scheme="http://jzqt.github.io/categories/Witcoder/"/>
+    
+      <category term="随笔" scheme="http://jzqt.github.io/categories/Witcoder/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[一个像素的问题]]></title>
+    <link href="http://jzqt.github.io/2015/10/20/%E4%B8%80%E4%B8%AA%E5%83%8F%E7%B4%A0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://jzqt.github.io/2015/10/20/一个像素的问题/</id>
+    <published>2015-10-20T04:15:54.000Z</published>
+    <updated>2015-10-20T04:30:13.000Z</updated>
+    <content type="html"><![CDATA[<p>下面这个故事，需要眼睛好点的人才能看懂（并不是说近视眼就算眼睛不好，主要是要眼尖，比如我虽然近视，但是眼尖）。</p>
+<h2 id="开始">开始</h2><p><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019202659.png" alt="1px"></p>
+<p>上面是Witcoder的导航栏。看到了没有？有没有发现？<br>没错，首页的下面有一个像素的线没有被染成和首页一样的灰色！（看不出来的眼睛都不尖～～）<br>其实这个问题很久以前我就注意到了，奈何一直没有办法解决（虽然我号称全栈，其实也不过就是个会写简单HTML套Bootstrap的后端而已啦）。</p>
+<p>是可忍孰不可忍，这次我下了决心一定要把这个问题解决，于是我叫了我们团队负责前端的小龙（这货其实会做页面精细的修改但是居然不会套前端模板，无法理解）……</p>
+<h2 id="波折">波折</h2><p>其实小龙也无法独自解决这个坑爹的问题，但是正好我们打算把这个导航栏换个颜色，与网站整体颜色搭配。</p>
+<p>于是，导航栏就变成了这样。<br><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019205032.png" alt=""><br>看到了吗？发现了吗？那个<strong>1px</strong>的问题解决了！！！</p>
+<p>可是，好景不长，我们发现阿飞写的宣传页面居然…<br><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019210726.png" alt=""></p>
+<p>谁叫他写的页面主体颜色是青色的呢…<br>其他页面都跟前面那张图一样没有问题，于是我和小龙一致认为是阿飞单独写的这个页面有问题，于是我和小龙打算修改阿飞写的宣传页面。</p>
+<p>接下来各种研究原因研究HTML代码，无果。<br>小龙大胆猜想可能不是阿飞写的页面的问题，而是我们写的导航栏问题，只是因为其他页面的主体背景颜色是白色，所以没显示出来。</p>
+<p>于是我将其他页面的背景颜色修改成了黑色。效果变成了这样<br><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019211608.png" alt=""></p>
+<p>错怪阿飞了有木有？！</p>
+<h2 id="后来">后来</h2><p>好了，现在把这个bug定位到我们写的导航条了，我们仔细分析发现<br><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019221015.png" alt=""></p>
+<p><strong>Shit！怎么会有这么51这种坑爹的高度！！！</strong><br><img src="http://7xnmm9.com1.z0.glb.clouddn.com/u=2924251397,200844675&amp;fm=21&amp;gp=0.jpg" alt=""></p>
+<p>于是我们开始用强的了！<br><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019221335.png" alt=""></p>
+<p>结果<br><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019221641.png" alt=""><br>还是TMD有缝！而且…<br><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019221800.png" alt=""><br>高度却成功更改了……<br>我的心情是这样的<br><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019223230.png" alt=""></p>
+<h2 id="最终">最终</h2><p>不过仔细地无意地，我们发现<br><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019223351.png" alt=""><br>原来是特么导航条右边的按钮有问题呀呀呀！！！</p>
+<p>接下来就不用多说了。</p>
+<p>至此，这个问题现在终于被完美解决了……</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>下面这个故事，需要眼睛好点的人才能看懂（并不是说近视眼就算眼睛不好，主要是要眼尖，比如我虽然近视，但是眼尖）。</p>
+<h2 id="开始">开始</h2><p><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%]]>
+    </summary>
+    
+      <category term="Witcoder开发之路" scheme="http://jzqt.github.io/tags/Witcoder%E5%BC%80%E5%8F%91%E4%B9%8B%E8%B7%AF/"/>
+    
+      <category term="Witcoder" scheme="http://jzqt.github.io/categories/Witcoder/"/>
+    
+      <category term="心得" scheme="http://jzqt.github.io/categories/Witcoder/%E5%BF%83%E5%BE%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Witcoder开发之路]]></title>
+    <link href="http://jzqt.github.io/2015/10/20/Witcoder%E5%BC%80%E5%8F%91%E4%B9%8B%E8%B7%AF/"/>
+    <id>http://jzqt.github.io/2015/10/20/Witcoder开发之路/</id>
+    <published>2015-10-20T04:10:28.000Z</published>
+    <updated>2015-10-20T04:30:25.000Z</updated>
+    <content type="html"><![CDATA[<p>想做一个Virtual Judge网站。<br>从大二的寒假这个想法开始萌芽到现在大三将它作为软件工程的实践项目来立项，已经有一个多学期了。</p>
+<p>这一个多学期我都在步步准备，我当初简单想做个VJ的想法也在步步完善。<br>现在已经成功在软件工程课中将它作为实践项目，可以光明正大正正经经和小伙伴们一起实现自己的想法了。<br>这个软件工程课的开始就是Witcoder的开始，但是这个课的结束绝不是Witcoder的结束。</p>
+<p>从开始立项到现在为止已经有四周了，开发的过程中有很多有趣的事情，所以我打算写些文章将它们记录下来。</p>
+<p>恩，这个系列就叫做<code>Witcoder开发之路</code>好了。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>想做一个Virtual Judge网站。<br>从大二的寒假这个想法开始萌芽到现在大三将它作为软件工程的实践项目来立项，已经有一个多学期了。</p>
+<p>这一个多学期我都在步步准备，我当初简单想做个VJ的想法也在步步完善。<br>现在已经成功在软件工程课中将它作为实践项目]]>
+    </summary>
+    
+      <category term="Witcoder开发之路" scheme="http://jzqt.github.io/tags/Witcoder%E5%BC%80%E5%8F%91%E4%B9%8B%E8%B7%AF/"/>
+    
+      <category term="Witcoder" scheme="http://jzqt.github.io/categories/Witcoder/"/>
+    
+      <category term="随笔" scheme="http://jzqt.github.io/categories/Witcoder/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ACM图论之存图方式]]></title>
+    <link href="http://jzqt.github.io/2015/07/21/ACM%E5%9B%BE%E8%AE%BA%E4%B9%8B%E5%AD%98%E5%9B%BE%E6%96%B9%E5%BC%8F/"/>
+    <id>http://jzqt.github.io/2015/07/21/ACM图论之存图方式/</id>
+    <published>2015-07-20T16:00:00.000Z</published>
+    <updated>2015-10-19T16:17:11.000Z</updated>
+    <content type="html"><![CDATA[<p>对于ACM图论方面的题目总是免不了首先要建图存图，使用合适的存图方式不但是AC的必要条件，解题事半功倍。</p>
+<p>以下主要分析三种常见的存图方式的优缺点以及代码实现</p>
+<ul>
+<li>邻接矩阵</li>
+<li>邻接表</li>
+<li>链式前向星</li>
+</ul>
+<h1 id="邻接矩阵">邻接矩阵</h1><p><strong>邻接矩阵</strong>是三种存图方式中最<strong>简单</strong>也最为<strong>暴力</strong>的一种存图方式了。</p>
+<h2 id="存图思想">存图思想</h2><p>使用一个矩阵来描述一个图，对于矩阵的第<code>i</code>行第<code>j</code>列的值，表示编号为<code>i</code>的顶点到编号为<code>j</code>的顶点的权值。</p>
+<h2 id="代码实现">代码实现</h2><p>对于邻接矩阵来说，它的代码实现都十分简单，二维数组就可以了。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 最大顶点数</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> V = <span class="number">1000</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 邻接矩阵的定义</span></span><br><span class="line"><span class="comment">// mat[i][j] 表示 顶点`i`到顶点`j`的权值</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> mat[V][V];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 邻接矩阵的初始化操作</span></span><br><span class="line"><span class="comment">// 假设权值为零表示没有该边</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">memset</span>(mat, <span class="number">0</span>, <span class="keyword">sizeof</span>(mat))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 增加边</span></span><br><span class="line"><span class="comment">// 新增顶点`i`到顶点`j`的边，权值为`w`</span></span><br><span class="line"></span><br><span class="line">mat[i][j] = w;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 删除边</span></span><br><span class="line"><span class="comment">// 删除顶点`i`到顶点`j`的边</span></span><br><span class="line"></span><br><span class="line">mat[i][j] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 查询边</span></span><br><span class="line"><span class="comment">// 查询顶点`i`到顶点`j`的边权</span></span><br><span class="line"></span><br><span class="line">mat[i][j];</span><br></pre></td></tr></table></figure>
+<h2 id="优点">优点</h2><p>使用邻接矩阵来进行建图存图有以下优点</p>
+<ul>
+<li><p><strong>简单易学</strong></p>
+<p>  这个肯定不用多说，哪怕是没学过线性代数的童鞋也很容易理解这样的存图方式。</p>
+</li>
+<li><p><strong>代码易写，简单好操作</strong></p>
+<p>  上面的代码实现已经展示了要定义这个数据结构以及实现初始化，增加删除边等操作有多么的简单。</p>
+</li>
+<li><p><strong>对已确定的边进行操作，效率高</strong></p>
+<p>  确定边（已知两顶点编号）要进行增加或删除边（或者说更改边权）以及查询边权等操作，时间复杂度为$O(1)$。</p>
+</li>
+<li><p><strong>易处理重边</strong></p>
+<p>  你可以随时覆盖掉重边，可以自己实现存储最新的边，权值最大的边或权值最小的边等。<br>  当然，如果你非要使用邻接矩阵存图还要存重边也不是不可以。</p>
+</li>
+</ul>
+<h2 id="缺点">缺点</h2><p>邻接矩阵存图虽然简单优雅，但是它的一些缺点却几乎是致命的。</p>
+<ul>
+<li><p><strong>过高的空间复杂度</strong></p>
+<p>  对于顶点数<code>V</code>，邻接矩阵存图的<strong>空间复杂度高达$O(V^2)$</strong>，<strong>顶点数</strong>上了<strong>一万</strong>可以不用考虑这种存图方式了。<br>  <strong>对于稀疏图来说，邻接矩阵存图内存浪费太严重，这也是邻接矩阵存图在ACM题目中十分罕见的根本原因。</strong></p>
+</li>
+<li><p><strong>对于不确定边的查询效率一般</strong></p>
+<p>  比如，我找个编号为<code>1</code>出发的第一条边我还要一条条边判断是否存在（权值是否为<code>0</code>）。</p>
+</li>
+</ul>
+<h1 id="邻接表">邻接表</h1><p>邻接表在三种常用的存图方式中属于较为<strong>中庸</strong>和普遍的存图方式了，缺点不致命，优点不明显。</p>
+<h2 id="存图思想-1">存图思想</h2><p><strong>邻接矩阵</strong>对于每个顶点使用<strong>定长的数组</strong>来存储以该点出发的边的情况。第<code>i</code>个数组的第<code>j</code>个值存储的是从顶点<code>i</code>到顶点<code>j</code>的边的权值。<br>而<strong>邻接表</strong>则是对于每个顶点使用<strong>不定长的链表</strong>来存储以该点出发的边的情况。因此对于第<code>i</code>个链表的第<code>j</code>个值实际上存储的是从编号为<code>i</code>的顶点出发的第<code>j</code>条边的情况。</p>
+<p><strong>一般来说，如果有边权的话，邻接表的链表存储的是一个结构体，这个结构体存储该边的终点以及边权。</strong></p>
+<p>下面给个邻接表与邻接矩阵存图的示例比较。</p>
+<img src="/2015/07/21/ACM图论之存图方式/links&matrix.png" alt="links&matrix.png" title="">
+<h2 id="代码实现-1">代码实现</h2><p>在ACM题目中，动态的数据结构一般是不被推荐的，因为动态开辟内存比较消耗时间，且写起来复杂容易出错。<br>大部分情况我们使用C++STL里的<code>vector</code>作为链表来实现图的邻接表。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 最大顶点数</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> V = <span class="number">100000</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// vector实现的邻接表的定义</span></span><br><span class="line"><span class="comment">// 不考虑边权，存储类型为int型</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; e[V];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 邻接表的初始化操作</span></span><br><span class="line"><span class="comment">// 将起点为`i`的边链表全部清空</span></span><br><span class="line"></span><br><span class="line">e[i].clear();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 增加边</span></span><br><span class="line"><span class="comment">// 新增顶点`i`到顶点`j`的边</span></span><br><span class="line"></span><br><span class="line">e[i].push_back(j);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 查询边</span></span><br><span class="line"></span><br><span class="line">e[i][<span class="number">0</span>];    <span class="comment">// 查询以`i`为起点的第一条边`i-&gt;e[i][0]`</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;(<span class="keyword">int</span>)e[i].size(); ++j) &#123;</span><br><span class="line">    <span class="keyword">if</span> (e[i][j] == k) &#123;     <span class="comment">// 查询边`i-&gt;k`</span></span><br><span class="line">        <span class="comment">// do something.</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="优点-1">优点</h2><ul>
+<li><p><strong>较为简单易学</strong></p>
+<p>  相比邻接矩阵，无非是数组转链表加上存储值的意义不同而已，不需要转太大的弯。</p>
+</li>
+<li><p><strong>代码易写，不复杂</strong></p>
+<p>  代码实现已经演示过了，较简单，不容易写错。</p>
+</li>
+<li><p><strong>内存利用率高</strong></p>
+<p>  对于顶点数<code>V</code>与边数<code>E</code>，<strong>空间复杂度为$O(V+E)$</strong>。能较好处理稀疏图的存储。</p>
+</li>
+<li><p><strong>对不确定边的操作方便效率也不错</strong></p>
+<p>  比如，要遍历从某点出发的所有边，不会像邻接矩阵一样可能会遍历到不存在的边。</p>
+</li>
+</ul>
+<h2 id="缺点-1">缺点</h2><ul>
+<li><p><strong>重边不好处理</strong></p>
+<p>  <strong>判重比较麻烦</strong>，还要遍历已有的边，不能直接判断。<br>  一般情况下使用邻接表存图是会存储重边的，不会做重边的判断。<br>  所以如果要解决重边的影响一般不在存边的情况下做文章。</p>
+</li>
+<li><p><strong>对确定边的操作效率不高</strong></p>
+<p>  比如对于给定<code>i-&gt;j</code>的边要进行查询或修改等操作只有通过遍历这种方式找到了。</p>
+</li>
+</ul>
+<h1 id="链式前向星">链式前向星</h1><p>未完待续……</p>
+<h1 id="总结">总结</h1><p>对于<strong>邻接矩阵存图</strong>来说，由于<strong>内存消耗</strong>的局限性，它的<strong>适用范围十分狭窄</strong>，几乎只能在简单图论题目中见到。</p>
+<p><strong>邻接表存图</strong>是<strong>最为常见</strong>的一种，绝大部分采用C++STL中的<code>vector</code>实现，一般情况下几乎所有图论题目都能使用该存图方式。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>对于ACM图论方面的题目总是免不了首先要建图存图，使用合适的存图方式不但是AC的必要条件，解题事半功倍。</p>
+<p>以下主要分析三种常见的存图方式的优缺点以及代码实现</p>
+<ul>
+<li>邻接矩阵</li>
+<li>邻接表</li>
+<li>链式前向星</li>
+]]>
+    </summary>
+    
+      <category term="ACM" scheme="http://jzqt.github.io/tags/ACM/"/>
+    
+      <category term="图论" scheme="http://jzqt.github.io/tags/%E5%9B%BE%E8%AE%BA/"/>
+    
+      <category term="算法与数据结构" scheme="http://jzqt.github.io/tags/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="ACM" scheme="http://jzqt.github.io/categories/ACM/"/>
+    
+      <category term="算法与数据结构" scheme="http://jzqt.github.io/categories/ACM/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Markdown中写数学公式]]></title>
+    <link href="http://jzqt.github.io/2015/06/30/Markdown%E4%B8%AD%E5%86%99%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"/>
+    <id>http://jzqt.github.io/2015/06/30/Markdown中写数学公式/</id>
+    <published>2015-06-30T06:58:13.000Z</published>
+    <updated>2015-10-20T04:05:41.000Z</updated>
+    <content type="html"><![CDATA[<p>一些扩展的<code>Markdown</code>语法支持采用<code>LaTex</code>语法写数学公式，而在网页中使用<code>Mathjax</code>插件来显示数学公式。</p>
+<p>本教程介绍<strong>如何在Markdown中书写数学公式</strong>。</p>
+<h1 id="插入数学公式">插入数学公式</h1><p>在Markdown中插入数学公式的语法是<code>$数学公式$</code>和<code>$$数学公式$$</code>。</p>
+<p><strong>行内公式</strong>是可以让公式在文中与文字或其他东西混编，不独占一行。</p>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">质能方程$E = mc^2$</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>显示</strong></p>
+<blockquote>
+<p>质能方程$E = mc^2$</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>独立公式</strong>使公式单独占一行，不与文中其他文字等混编。</p>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">质能方程$$E = mc^2$$</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>显示</strong></p>
+<blockquote>
+<p>质能方程$$E = mc^2$$</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="普通公式">普通公式</h1><p>普通的加减乘除数学公式的输入方法与平常的书写一样。</p>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$x = 100 * y + z - 10 / 33 + 10 % 3$$</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>显示</strong></p>
+<blockquote>
+<p>$$x = 100 * y + z - 10 / 33 + 10 % 3$$</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="上下标">上下标</h1><p>使用<code>^</code>来表示上标，<code>_</code>来表示下标，同时如果上下标的内容多于一个字符，可以使用<code>{}</code>来将这些内容括起来当做一个整体。<br>与此同时，上下标是可以嵌套的。</p>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$x = a<span class="emphasis">_&#123;1&#125;^n + a_</span>&#123;2&#125;^n + a_&#123;3&#125;^n$$</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>显示</strong></p>
+<blockquote>
+<p>$$x = a_{1}^n + a_{2}^n + a_{3}^n$$</p>
+</blockquote>
+</li>
+</ul>
+<p>如果希望左右两边都能有上下标，可以使用<code>\sideset</code>语法</p>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\sideset&#123;^1<span class="emphasis">_2&#125;&#123;^3_</span>4&#125;A$$</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>显示</strong></p>
+<blockquote>
+<p>$$\sideset{^1_2}{^3_4}A$$</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="括号">括号</h1><p><code>()</code>，<code>[]</code>和<code>|</code>都表示它们自己，但是<code>{}</code>因为有特殊作用因此当需要显示大括号时一般使用<code>\lbrace \rbrace</code>来表示。</p>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$f(x, y) = 100 <span class="bullet">* \lbrace[(x + y) *</span> 3] - 5\rbrace$$</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>显示</strong></p>
+<blockquote>
+<p>$$f(x, y) = 100 * \lbrace[(x + y) * 3] - 5\rbrace$$</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="分数">分数</h1><p>分数使用<code>\frac{分母}{分子}</code>这样的语法，不过推荐使用<code>\cfrac</code>来代替<code>\frac</code>，显示公式不会太挤。</p>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\frac&#123;1&#125;&#123;3&#125; 与 \cfrac&#123;1&#125;&#123;3&#125;$$</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>显示</strong></p>
+<blockquote>
+<p>$$\frac{1}{3} 与 \cfrac{1}{3}$$</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="开方">开方</h1><p>开方使用<code>\sqrt[次数]{被开方数}</code>这样的语法</p>
+<ul>
+<li><p><strong>示例</strong></p>
+  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$$\sqrt[3]&#123;X&#125;$$</span><br><span class="line">$$\sqrt&#123;5 - x&#125;$$</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>显示</strong></p>
+<blockquote>
+<p>$$\sqrt[3]{X}$$<br>$$\sqrt{5 - x}$$</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="希腊字母">希腊字母</h1><p>见下表</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">代码</th>
+<th style="text-align:center">大写</th>
+<th style="text-align:center">代码</th>
+<th style="text-align:left">小写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>A</code></td>
+<td style="text-align:center">$A$</td>
+<td style="text-align:center"><code>\alpha</code></td>
+<td style="text-align:left">$\alpha$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>B</code></td>
+<td style="text-align:center">$B$</td>
+<td style="text-align:center"><code>\beta</code></td>
+<td style="text-align:left">$\beta$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\Gamma</code></td>
+<td style="text-align:center">$\Gamma$</td>
+<td style="text-align:center"><code>\gamma</code></td>
+<td style="text-align:left">$\gamma$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\Delta</code></td>
+<td style="text-align:center">$\Delta$</td>
+<td style="text-align:center"><code>\delta</code></td>
+<td style="text-align:left">$\delta$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>E</code></td>
+<td style="text-align:center">$E$</td>
+<td style="text-align:center"><code>\epsilon</code></td>
+<td style="text-align:left">$\epsilon$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>Z</code></td>
+<td style="text-align:center">$Z$</td>
+<td style="text-align:center"><code>\zeta</code></td>
+<td style="text-align:left">$\zeta$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>H</code></td>
+<td style="text-align:center">$H$</td>
+<td style="text-align:center"><code>\eta</code></td>
+<td style="text-align:left">$\eta$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\Theta</code></td>
+<td style="text-align:center">$\Theta$</td>
+<td style="text-align:center"><code>\theta</code></td>
+<td style="text-align:left">$\theta$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>I</code></td>
+<td style="text-align:center">$I$</td>
+<td style="text-align:center"><code>\iota</code></td>
+<td style="text-align:left">$\iota$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>K</code></td>
+<td style="text-align:center">$K$</td>
+<td style="text-align:center"><code>\kappa</code></td>
+<td style="text-align:left">$\kappa$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\Lambda</code></td>
+<td style="text-align:center">$\Lambda$</td>
+<td style="text-align:center"><code>\lambda</code></td>
+<td style="text-align:left">$\lambda$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>M</code></td>
+<td style="text-align:center">$M$</td>
+<td style="text-align:center"><code>\mu</code></td>
+<td style="text-align:left">$\mu$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>N</code></td>
+<td style="text-align:center">$N$</td>
+<td style="text-align:center"><code>\nu</code></td>
+<td style="text-align:left">$\nu$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\Xi</code></td>
+<td style="text-align:center">$\Xi$</td>
+<td style="text-align:center"><code>\xi</code></td>
+<td style="text-align:left">$\xi$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>O</code></td>
+<td style="text-align:center">$O$</td>
+<td style="text-align:center"><code>\omicron</code></td>
+<td style="text-align:left">$\omicron$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\Pi</code></td>
+<td style="text-align:center">$\Pi$</td>
+<td style="text-align:center"><code>\pi</code></td>
+<td style="text-align:left">$\pi$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>P</code></td>
+<td style="text-align:center">$P$</td>
+<td style="text-align:center"><code>\rho</code></td>
+<td style="text-align:left">$\rho$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\Sigma</code></td>
+<td style="text-align:center">$\Sigma$</td>
+<td style="text-align:center"><code>\sigma</code></td>
+<td style="text-align:left">$\sigma$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>T</code></td>
+<td style="text-align:center">$T$</td>
+<td style="text-align:center"><code>\tau</code></td>
+<td style="text-align:left">$\tau$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\Upsilon</code></td>
+<td style="text-align:center">$\Upsilon$</td>
+<td style="text-align:center"><code>\upsilon</code></td>
+<td style="text-align:left">$\upsilon$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\Phi</code></td>
+<td style="text-align:center">$\Phi$</td>
+<td style="text-align:center"><code>\phi</code></td>
+<td style="text-align:left">$\phi$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>X</code></td>
+<td style="text-align:center">$X$</td>
+<td style="text-align:center"><code>\chi</code></td>
+<td style="text-align:left">$\chi$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\Psi</code></td>
+<td style="text-align:center">$\Psi$</td>
+<td style="text-align:center"><code>\psi</code></td>
+<td style="text-align:left">$\psi$</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>\Omega</code></td>
+<td style="text-align:center">$\Omega$</td>
+<td style="text-align:center"><code>\omega</code></td>
+<td style="text-align:left">$\omega$</td>
+</tr>
+</tbody>
+</table>
+<h1 id="其他字符">其他字符</h1><h2 id="关系运算符">关系运算符</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:left">代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\pm$</td>
+<td style="text-align:left"><code>\pm</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\times$</td>
+<td style="text-align:left"><code>\times</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\div$</td>
+<td style="text-align:left"><code>\div</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\mid$</td>
+<td style="text-align:left"><code>\mid</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\nmid$</td>
+<td style="text-align:left"><code>\nmid</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\cdot$</td>
+<td style="text-align:left"><code>\cdot</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\circ$</td>
+<td style="text-align:left"><code>\circ</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\ast$</td>
+<td style="text-align:left"><code>\ast</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\bigodot$</td>
+<td style="text-align:left"><code>\bigodot</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\bigotimes$</td>
+<td style="text-align:left"><code>\bigotimes</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\bigoplus$</td>
+<td style="text-align:left"><code>\bigoplus</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\leq$</td>
+<td style="text-align:left"><code>\leq</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\geq$</td>
+<td style="text-align:left"><code>\geq</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\neq$</td>
+<td style="text-align:left"><code>\neq</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\approx$</td>
+<td style="text-align:left"><code>\approx</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\equiv$</td>
+<td style="text-align:left"><code>\equiv</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\sum$</td>
+<td style="text-align:left"><code>\sum</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\prod$</td>
+<td style="text-align:left"><code>\prod</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\coprod$</td>
+<td style="text-align:left"><code>\coprod</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="集合运算符">集合运算符</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:left">代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\emptyset$</td>
+<td style="text-align:left"><code>\emptyset</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\in$</td>
+<td style="text-align:left"><code>\in</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\notin$</td>
+<td style="text-align:left"><code>\notin</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\subset$</td>
+<td style="text-align:left"><code>\subset</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\supset$</td>
+<td style="text-align:left"><code>\supset</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\subseteq$</td>
+<td style="text-align:left"><code>\subseteq</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\supseteq$</td>
+<td style="text-align:left"><code>\supseteq</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\bigcap$</td>
+<td style="text-align:left"><code>\bigcap</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\bigcup$</td>
+<td style="text-align:left"><code>\bigcup</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\bigvee$</td>
+<td style="text-align:left"><code>\bigvee</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\bigwedge$</td>
+<td style="text-align:left"><code>\bigwedge</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\biguplus$</td>
+<td style="text-align:left"><code>\biguplus</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\bigsqcup$</td>
+<td style="text-align:left"><code>\bigsqcup</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="对数运算符">对数运算符</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:left">代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\log$</td>
+<td style="text-align:left"><code>\log</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\lg$</td>
+<td style="text-align:left"><code>\lg</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\ln$</td>
+<td style="text-align:left"><code>\ln</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="三角运算符">三角运算符</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:left">代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\bot$</td>
+<td style="text-align:left"><code>\bot</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\angle$</td>
+<td style="text-align:left"><code>\angle</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\sin$</td>
+<td style="text-align:left"><code>\sin</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\cos$</td>
+<td style="text-align:left"><code>\cos</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\tan$</td>
+<td style="text-align:left"><code>\tan</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\cot$</td>
+<td style="text-align:left"><code>\cot</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\sec$</td>
+<td style="text-align:left"><code>\sec</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\csc$</td>
+<td style="text-align:left"><code>\csc</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="微积分运算符">微积分运算符</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:left">代码</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$\prime$</td>
+<td style="text-align:left"><code>\prime</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\int$</td>
+<td style="text-align:left"><code>\int</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\iint$</td>
+<td style="text-align:left"><code>\iint</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\iiint$</td>
+<td style="text-align:left"><code>\iiint</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\iiiint$</td>
+<td style="text-align:left"><code>\iiiint</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\oint$</td>
+<td style="text-align:left"><code>\oint</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\lim$</td>
+<td style="text-align:left"><code>\lim</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\infty$</td>
+<td style="text-align:left"><code>\infty</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\nabla$</td>
+<td style="text-align:left"><code>\nabla</code></td>
+</tr>
+<tr>
+<td style="text-align:center">$\mathrm{d}$</td>
+<td style="text-align:left"><code>\mathrm{d}</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="未完待续">未完待续</h1><p><strong>……</strong></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>一些扩展的<code>Markdown</code>语法支持采用<code>LaTex</code>语法写数学公式，而在网页中使用<code>Mathjax</code>插件来显示数学公式。</p>
+<p>本教程介绍<strong>如何在Markdown中书写数学公式</s]]>
+    </summary>
+    
+      <category term="LaTex" scheme="http://jzqt.github.io/tags/LaTex/"/>
+    
+      <category term="Markdown" scheme="http://jzqt.github.io/tags/Markdown/"/>
+    
+      <category term="Mathjax" scheme="http://jzqt.github.io/tags/Mathjax/"/>
+    
+      <category term="备忘" scheme="http://jzqt.github.io/categories/%E5%A4%87%E5%BF%98/"/>
+    
+  </entry>
+  
+</feed>
