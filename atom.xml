@@ -4,7 +4,7 @@
   <subtitle><![CDATA[三人行，必有我师焉；择其善者而从之，其不善者而改之]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jzqt.github.io/"/>
-  <updated>2015-10-20T04:30:42.000Z</updated>
+  <updated>2015-10-20T17:09:38.000Z</updated>
   <id>http://jzqt.github.io/</id>
   
   <author>
@@ -15,11 +15,45 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[关于Python的一次小记]]></title>
+    <link href="http://jzqt.github.io/2015/10/20/%E5%85%B3%E4%BA%8EPython%E7%9A%84%E4%B8%80%E6%AC%A1%E5%B0%8F%E8%AE%B0/"/>
+    <id>http://jzqt.github.io/2015/10/20/关于Python的一次小记/</id>
+    <published>2015-10-20T14:53:25.000Z</published>
+    <updated>2015-10-20T17:09:38.000Z</updated>
+    <content type="html"><![CDATA[<p>室友在寝室做题，突然问了一句：“1到10的平方和是多少？”</p>
+<p>我正在写Witcoder的HTML，突然意识到这是一个装13的好机会。</p>
+<p>“什么什么？你再说一遍？！”</p>
+<p>“1到10的平方和是多少？”</p>
+<p>“马上马上，你等一下……”</p>
+<p>我快速在终端打开Python敲了下面的代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span>sum([i * i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">11</span>)])</span><br><span class="line"><span class="number">385</span></span><br></pre></td></tr></table></figure>
+<p>“385啊”</p>
+<p>“哦……”</p>
+<p>接下来我想要说的可能很多人都猜到了。</p>
+<p><strong>人生苦短，我用Python。</strong></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>室友在寝室做题，突然问了一句：“1到10的平方和是多少？”</p>
+<p>我正在写Witcoder的HTML，突然意识到这是一个装13的好机会。</p>
+<p>“什么什么？你再说一遍？！”</p>
+<p>“1到10的平方和是多少？”</p>
+<p>“马上马上，你等一下……”]]>
+    </summary>
+    
+      <category term="Python" scheme="http://jzqt.github.io/tags/Python/"/>
+    
+      <category term="杂记" scheme="http://jzqt.github.io/tags/%E6%9D%82%E8%AE%B0/"/>
+    
+      <category term="杂记" scheme="http://jzqt.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[色彩的纠结（比赛训练状态标签）]]></title>
     <link href="http://jzqt.github.io/2015/10/20/%E8%89%B2%E5%BD%A9%E7%9A%84%E7%BA%A0%E7%BB%93%EF%BC%88%E6%AF%94%E8%B5%9B%E8%AE%AD%E7%BB%83%E7%8A%B6%E6%80%81%E6%A0%87%E7%AD%BE%EF%BC%89/"/>
     <id>http://jzqt.github.io/2015/10/20/色彩的纠结（比赛训练状态标签）/</id>
     <published>2015-10-20T04:17:08.000Z</published>
-    <updated>2015-10-20T04:30:42.000Z</updated>
+    <updated>2015-10-20T17:11:32.000Z</updated>
     <content type="html"><![CDATA[<p>Witcoder的比赛训练有三种状态。<br>分别是<code>未开始</code>，<code>进行中</code>和<code>已结束</code>。</p>
 <p>可是，在选择颜色代表它们的时候，我们陷入了纠结。<br>下面是几种考虑的方案。</p>
 <p><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019152005.png" alt=""><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019152503.png" alt=""><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019152813.png" alt=""><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019153135.png" alt=""></p>
@@ -35,11 +69,11 @@
 <p><img ]]>
     </summary>
     
-      <category term="Witcoder开发之路" scheme="http://jzqt.github.io/tags/Witcoder%E5%BC%80%E5%8F%91%E4%B9%8B%E8%B7%AF/"/>
+      <category term="Witcoder" scheme="http://jzqt.github.io/tags/Witcoder/"/>
     
-      <category term="Witcoder" scheme="http://jzqt.github.io/categories/Witcoder/"/>
+      <category term="杂记" scheme="http://jzqt.github.io/tags/%E6%9D%82%E8%AE%B0/"/>
     
-      <category term="随笔" scheme="http://jzqt.github.io/categories/Witcoder/%E9%9A%8F%E7%AC%94/"/>
+      <category term="Witcoder开发之路" scheme="http://jzqt.github.io/categories/Witcoder%E5%BC%80%E5%8F%91%E4%B9%8B%E8%B7%AF/"/>
     
   </entry>
   
@@ -48,7 +82,7 @@
     <link href="http://jzqt.github.io/2015/10/20/%E4%B8%80%E4%B8%AA%E5%83%8F%E7%B4%A0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>http://jzqt.github.io/2015/10/20/一个像素的问题/</id>
     <published>2015-10-20T04:15:54.000Z</published>
-    <updated>2015-10-20T04:30:13.000Z</updated>
+    <updated>2015-10-20T17:12:44.000Z</updated>
     <content type="html"><![CDATA[<p>下面这个故事，需要眼睛好点的人才能看懂（并不是说近视眼就算眼睛不好，主要是要眼尖，比如我虽然近视，但是眼尖）。</p>
 <h2 id="开始">开始</h2><p><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019202659.png" alt="1px"></p>
 <p>上面是Witcoder的导航栏。看到了没有？有没有发现？<br>没错，首页的下面有一个像素的线没有被染成和首页一样的灰色！（看不出来的眼睛都不尖～～）<br>其实这个问题很久以前我就注意到了，奈何一直没有办法解决（虽然我号称全栈，其实也不过就是个会写简单HTML套Bootstrap的后端而已啦）。</p>
@@ -73,11 +107,11 @@
 <h2 id="开始">开始</h2><p><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%]]>
     </summary>
     
-      <category term="Witcoder开发之路" scheme="http://jzqt.github.io/tags/Witcoder%E5%BC%80%E5%8F%91%E4%B9%8B%E8%B7%AF/"/>
+      <category term="Witcoder" scheme="http://jzqt.github.io/tags/Witcoder/"/>
     
-      <category term="Witcoder" scheme="http://jzqt.github.io/categories/Witcoder/"/>
+      <category term="杂记" scheme="http://jzqt.github.io/tags/%E6%9D%82%E8%AE%B0/"/>
     
-      <category term="心得" scheme="http://jzqt.github.io/categories/Witcoder/%E5%BF%83%E5%BE%97/"/>
+      <category term="Witcoder开发之路" scheme="http://jzqt.github.io/categories/Witcoder%E5%BC%80%E5%8F%91%E4%B9%8B%E8%B7%AF/"/>
     
   </entry>
   
@@ -86,7 +120,7 @@
     <link href="http://jzqt.github.io/2015/10/20/Witcoder%E5%BC%80%E5%8F%91%E4%B9%8B%E8%B7%AF/"/>
     <id>http://jzqt.github.io/2015/10/20/Witcoder开发之路/</id>
     <published>2015-10-20T04:10:28.000Z</published>
-    <updated>2015-10-20T04:30:25.000Z</updated>
+    <updated>2015-10-20T17:11:45.000Z</updated>
     <content type="html"><![CDATA[<p>想做一个Virtual Judge网站。<br>从大二的寒假这个想法开始萌芽到现在大三将它作为软件工程的实践项目来立项，已经有一个多学期了。</p>
 <p>这一个多学期我都在步步准备，我当初简单想做个VJ的想法也在步步完善。<br>现在已经成功在软件工程课中将它作为实践项目，可以光明正大正正经经和小伙伴们一起实现自己的想法了。<br>这个软件工程课的开始就是Witcoder的开始，但是这个课的结束绝不是Witcoder的结束。</p>
 <p>从开始立项到现在为止已经有四周了，开发的过程中有很多有趣的事情，所以我打算写些文章将它们记录下来。</p>
@@ -97,11 +131,11 @@
 <p>这一个多学期我都在步步准备，我当初简单想做个VJ的想法也在步步完善。<br>现在已经成功在软件工程课中将它作为实践项目]]>
     </summary>
     
-      <category term="Witcoder开发之路" scheme="http://jzqt.github.io/tags/Witcoder%E5%BC%80%E5%8F%91%E4%B9%8B%E8%B7%AF/"/>
+      <category term="Witcoder" scheme="http://jzqt.github.io/tags/Witcoder/"/>
     
-      <category term="Witcoder" scheme="http://jzqt.github.io/categories/Witcoder/"/>
+      <category term="杂记" scheme="http://jzqt.github.io/tags/%E6%9D%82%E8%AE%B0/"/>
     
-      <category term="随笔" scheme="http://jzqt.github.io/categories/Witcoder/%E9%9A%8F%E7%AC%94/"/>
+      <category term="Witcoder开发之路" scheme="http://jzqt.github.io/categories/Witcoder%E5%BC%80%E5%8F%91%E4%B9%8B%E8%B7%AF/"/>
     
   </entry>
   
@@ -110,7 +144,7 @@
     <link href="http://jzqt.github.io/2015/07/21/ACM%E5%9B%BE%E8%AE%BA%E4%B9%8B%E5%AD%98%E5%9B%BE%E6%96%B9%E5%BC%8F/"/>
     <id>http://jzqt.github.io/2015/07/21/ACM图论之存图方式/</id>
     <published>2015-07-20T16:00:00.000Z</published>
-    <updated>2015-10-19T16:17:11.000Z</updated>
+    <updated>2015-10-20T17:11:06.000Z</updated>
     <content type="html"><![CDATA[<p>对于ACM图论方面的题目总是免不了首先要建图存图，使用合适的存图方式不但是AC的必要条件，解题事半功倍。</p>
 <p>以下主要分析三种常见的存图方式的优缺点以及代码实现</p>
 <ul>
@@ -195,9 +229,7 @@
     
       <category term="算法与数据结构" scheme="http://jzqt.github.io/tags/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
-      <category term="ACM" scheme="http://jzqt.github.io/categories/ACM/"/>
-    
-      <category term="算法与数据结构" scheme="http://jzqt.github.io/categories/ACM/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+      <category term="算法与数据结构" scheme="http://jzqt.github.io/categories/%E7%AE%97%E6%B3%95%E4%B8%8E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
@@ -206,7 +238,7 @@
     <link href="http://jzqt.github.io/2015/06/30/Markdown%E4%B8%AD%E5%86%99%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"/>
     <id>http://jzqt.github.io/2015/06/30/Markdown中写数学公式/</id>
     <published>2015-06-30T06:58:13.000Z</published>
-    <updated>2015-10-20T04:05:41.000Z</updated>
+    <updated>2015-10-20T17:10:41.000Z</updated>
     <content type="html"><![CDATA[<p>一些扩展的<code>Markdown</code>语法支持采用<code>LaTex</code>语法写数学公式，而在网页中使用<code>Mathjax</code>插件来显示数学公式。</p>
 <p>本教程介绍<strong>如何在Markdown中书写数学公式</strong>。</p>
 <h1 id="插入数学公式">插入数学公式</h1><p>在Markdown中插入数学公式的语法是<code>$数学公式$</code>和<code>$$数学公式$$</code>。</p>
