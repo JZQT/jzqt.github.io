@@ -4,29 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Witcoder开发之路 | 剑紫青天</title>
+    <title>用户数据库的设计 | 剑紫青天</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="剑紫青天">
     
 
     
-    <meta name="description" content="想做一个Virtual Judge网站。从大二的寒假这个想法开始萌芽到现在大三将它作为软件工程的实践项目来立项，已经有一个多学期了。
-这一个多学期我都在步步准备，我当初简单想做个VJ的想法也在步步完善。现在已经成功在软件工程课中将它作为实践项目，可以光明正大正正经经和小伙伴们一起实现自己的想法了。这个软件工程课的开始就是Witcoder的开始，但是这个课的结束绝不是Witcoder的结束。
-从开始">
+    <meta name="description" content="软件工程的老师上课说数据库中的用户数据表的主键要用自增的user_id做主键，而不要用username做主键。
+这让我产生了一些疑问。
+首先，用户登录时提供的账号信息必然是自选的字符串username，而不是整数类型的自增主键user_id。我认为username与user_id其实都是具有唯一性约束的字段。因此username完全可以替代user_id的作用，所以user_id就显得没那么有必要">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Witcoder开发之路">
-<meta property="og:url" content="http://jzqt.github.io/2015/10/20/Witcoder开发之路/index.html">
+<meta property="og:title" content="用户数据库的设计">
+<meta property="og:url" content="http://jzqt.github.io/2015/10/26/用户数据库的设计/index.html">
 <meta property="og:site_name" content="剑紫青天">
-<meta property="og:description" content="想做一个Virtual Judge网站。从大二的寒假这个想法开始萌芽到现在大三将它作为软件工程的实践项目来立项，已经有一个多学期了。
-这一个多学期我都在步步准备，我当初简单想做个VJ的想法也在步步完善。现在已经成功在软件工程课中将它作为实践项目，可以光明正大正正经经和小伙伴们一起实现自己的想法了。这个软件工程课的开始就是Witcoder的开始，但是这个课的结束绝不是Witcoder的结束。
-从开始">
-<meta property="og:updated_time" content="2015-10-20T17:11:45.000Z">
+<meta property="og:description" content="软件工程的老师上课说数据库中的用户数据表的主键要用自增的user_id做主键，而不要用username做主键。
+这让我产生了一些疑问。
+首先，用户登录时提供的账号信息必然是自选的字符串username，而不是整数类型的自增主键user_id。我认为username与user_id其实都是具有唯一性约束的字段。因此username完全可以替代user_id的作用，所以user_id就显得没那么有必要">
+<meta property="og:updated_time" content="2015-10-26T15:40:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Witcoder开发之路">
-<meta name="twitter:description" content="想做一个Virtual Judge网站。从大二的寒假这个想法开始萌芽到现在大三将它作为软件工程的实践项目来立项，已经有一个多学期了。
-这一个多学期我都在步步准备，我当初简单想做个VJ的想法也在步步完善。现在已经成功在软件工程课中将它作为实践项目，可以光明正大正正经经和小伙伴们一起实现自己的想法了。这个软件工程课的开始就是Witcoder的开始，但是这个课的结束绝不是Witcoder的结束。
-从开始">
+<meta name="twitter:title" content="用户数据库的设计">
+<meta name="twitter:description" content="软件工程的老师上课说数据库中的用户数据表的主键要用自增的user_id做主键，而不要用username做主键。
+这让我产生了一些疑问。
+首先，用户登录时提供的账号信息必然是自选的字符串username，而不是整数类型的自增主键user_id。我认为username与user_id其实都是具有唯一性约束的字段。因此username完全可以替代user_id的作用，所以user_id就显得没那么有必要">
 
     
     <link rel="alternative" href="/atom.xml" title="剑紫青天" type="application/atom+xml">
@@ -86,14 +86,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/10/20/Witcoder开发之路/" title="Witcoder开发之路" itemprop="url">Witcoder开发之路</a>
+      <a href="/2015/10/26/用户数据库的设计/" title="用户数据库的设计" itemprop="url">用户数据库的设计</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="剑紫青天" target="_blank" itemprop="author">剑紫青天</a>
 		
   <p class="article-time">
-    <time datetime="2015-10-20T04:10:28.000Z" itemprop="datePublished"> 发表于 2015-10-20</time>
+    <time datetime="2015-10-26T14:34:48.000Z" itemprop="datePublished"> 发表于 2015-10-26</time>
     
   </p>
 </header>
@@ -106,10 +106,26 @@
 		
 		</div>
 		
-		<p>想做一个Virtual Judge网站。<br>从大二的寒假这个想法开始萌芽到现在大三将它作为软件工程的实践项目来立项，已经有一个多学期了。</p>
-<p>这一个多学期我都在步步准备，我当初简单想做个VJ的想法也在步步完善。<br>现在已经成功在软件工程课中将它作为实践项目，可以光明正大正正经经和小伙伴们一起实现自己的想法了。<br>这个软件工程课的开始就是Witcoder的开始，但是这个课的结束绝不是Witcoder的结束。</p>
-<p>从开始立项到现在为止已经有四周了，开发的过程中有很多有趣的事情，所以我打算写些文章将它们记录下来。</p>
-<p>恩，这个系列就叫做<code>Witcoder开发之路</code>好了。</p>
+		<p>软件工程的老师上课说数据库中的用户数据表的主键要用自增的<code>user_id</code>做主键，而不要用<code>username</code>做主键。</p>
+<p>这让我产生了一些疑问。</p>
+<p>首先，用户登录时提供的账号信息必然是自选的字符串<code>username</code>，而不是整数类型的自增主键<code>user_id</code>。<br>我认为<code>username</code>与<code>user_id</code>其实都是具有唯一性约束的字段。因此<code>username</code>完全可以替代<code>user_id</code>的作用，所以<code>user_id</code>就显得没那么有必要了。<br>如果没有其他足够的理由（比如优化之类的，可能我还不知道这个理由）是不应该引进这么个“多余”的字段的。</p>
+<p>带着这样的疑问，我询问了老师这么做的原因。</p>
+<p>老师给出了这样的回答，<strong>节省存储</strong>。<br>因为用户的主表只是存储用户的基本信息，其他用户表需要以用户主表的主键作为外键来存储信息。</p>
+<p>这么说来，的确是这个样子的。<br>使用<code>INTEGER UNSIGNED</code>类型来存储<code>user_id</code>作为用户分表的外键，比起使用<code>VARCHAR</code>类型的<code>username</code>做外键，显然要节省存储的多。<br>毕竟前者只占用4个字节的存储，而后者占用<code>username</code>长度+1个字节的存储，显然不会有几个人的<code>username</code>会设置成3个字母以内嘛。<br>而且，数据越多，数据表越多，节省的存储也就越大。</p>
+<p>理由很充分嘛。于是我继续问老师还有没有别的原因，他没再回答。</p>
+<p>但是我觉得原因肯定不仅仅是这个，毕竟大部分应用和算法都是<strong>以空间换时间</strong>。<br>以<code>user_id</code>应该有某种效率上的优势才对，虽然我现在认为看起来反而使用<code>user_id</code>效率反而应该低些。</p>
+<p>理由是：用户登录提供的是<code>username</code>，因此，如果用户主表是以<code>user_id</code>作为主键，那么应用需要通过登录用户提供的<code>username</code>在用户主表中查询出<code>user_id</code>，然后在用户分表中通过在用户主表查询出来的<code>user_id</code>来查询用户其他相关信息。<br>而如果直接采用<code>username</code>的话，不需要在用户主表做查询了，直接就可以拿着<code>username</code>在各种用户分表查各种用户信息。</p>
+<p>当然，上面的理由其实都是我的一种猜测而已，正确的学习习惯是<strong>学习不能够想当然</strong>，因此，猜测归猜测，终归还是要验证的。</p>
+<p>我只好找了一位已在工作中的前辈（外校的一个学长，帮助我解决了许多问题）询问这个问题。</p>
+<p>在我与他的讨论中，他给出了如下的回答：</p>
+<ol>
+<li>老师说的没错，确实是能够节省存储</li>
+<li>通常实践中也确实是使用整数类型的<code>user_id</code>来做主键的</li>
+<li>整数字段做主键更加易于分表</li>
+<li>自增主键比起字符串做索引，效率更高（看，果然有效率的问题哈）</li>
+<li><code>username</code>这个东西过于偏向业务，如果今后系统还需要允许邮箱登录，手机号登录呢？</li>
+</ol>
+<p>以上的回答我认为第3,4,5点是非常重要的原因。<br>3,4的原因可以归结为在效率上和分表操作性上确实比用<code>username</code>做主键要好；<br>5则说明了对于那种扩展登录的业务，使用里面任何一种登录方式的字段作为主键都不太合适。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -117,13 +133,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Witcoder开发之路/">Witcoder开发之路</a>
+  <a class="article-category-link" href="/categories/Witcoder开发者之路/">Witcoder开发者之路</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Witcoder/">Witcoder</a><a href="/tags/杂记/">杂记</a>
+  <span></span> <a href="/tags/Witcoder/">Witcoder</a><a href="/tags/数据库/">数据库</a>
   </div>
 
 </div>
@@ -132,7 +148,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://jzqt.github.io/2015/10/20/Witcoder开发之路/" data-title="Witcoder开发之路 | 剑紫青天" data-tsina="null" class="share clearfix">
+	  <div data-url="http://jzqt.github.io/2015/10/26/用户数据库的设计/" data-title="用户数据库的设计 | 剑紫青天" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -145,19 +161,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/10/20/一个像素的问题/" title="一个像素的问题">
-  <strong>上一篇：</strong><br/>
-  <span>
-  一个像素的问题</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/07/21/ACM图论之存图方式/"  title="ACM图论之存图方式">
+<a href="/2015/10/20/关于Python的一次小记/"  title="关于Python的一次小记">
  <strong>下一篇：</strong><br/> 
- <span>ACM图论之存图方式
+ <span>关于Python的一次小记
 </span>
 </a>
 </div>
@@ -166,7 +174,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/10/20/Witcoder开发之路/" data-title="Witcoder开发之路" data-url="http://jzqt.github.io/2015/10/20/Witcoder开发之路/"></div>
+	<div class="ds-thread" data-thread-key="2015/10/26/用户数据库的设计/" data-title="用户数据库的设计" data-url="http://jzqt.github.io/2015/10/26/用户数据库的设计/"></div>
 </section>
 
 

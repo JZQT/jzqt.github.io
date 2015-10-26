@@ -4,7 +4,7 @@
   <subtitle><![CDATA[三人行，必有我师焉；择其善者而从之，其不善者而改之]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jzqt.github.io/"/>
-  <updated>2015-10-20T17:09:38.000Z</updated>
+  <updated>2015-10-26T15:40:10.000Z</updated>
   <id>http://jzqt.github.io/</id>
   
   <author>
@@ -13,6 +13,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[用户数据库的设计]]></title>
+    <link href="http://jzqt.github.io/2015/10/26/%E7%94%A8%E6%88%B7%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1/"/>
+    <id>http://jzqt.github.io/2015/10/26/用户数据库的设计/</id>
+    <published>2015-10-26T14:34:48.000Z</published>
+    <updated>2015-10-26T15:40:10.000Z</updated>
+    <content type="html"><![CDATA[<p>软件工程的老师上课说数据库中的用户数据表的主键要用自增的<code>user_id</code>做主键，而不要用<code>username</code>做主键。</p>
+<p>这让我产生了一些疑问。</p>
+<p>首先，用户登录时提供的账号信息必然是自选的字符串<code>username</code>，而不是整数类型的自增主键<code>user_id</code>。<br>我认为<code>username</code>与<code>user_id</code>其实都是具有唯一性约束的字段。因此<code>username</code>完全可以替代<code>user_id</code>的作用，所以<code>user_id</code>就显得没那么有必要了。<br>如果没有其他足够的理由（比如优化之类的，可能我还不知道这个理由）是不应该引进这么个“多余”的字段的。</p>
+<p>带着这样的疑问，我询问了老师这么做的原因。</p>
+<p>老师给出了这样的回答，<strong>节省存储</strong>。<br>因为用户的主表只是存储用户的基本信息，其他用户表需要以用户主表的主键作为外键来存储信息。</p>
+<p>这么说来，的确是这个样子的。<br>使用<code>INTEGER UNSIGNED</code>类型来存储<code>user_id</code>作为用户分表的外键，比起使用<code>VARCHAR</code>类型的<code>username</code>做外键，显然要节省存储的多。<br>毕竟前者只占用4个字节的存储，而后者占用<code>username</code>长度+1个字节的存储，显然不会有几个人的<code>username</code>会设置成3个字母以内嘛。<br>而且，数据越多，数据表越多，节省的存储也就越大。</p>
+<p>理由很充分嘛。于是我继续问老师还有没有别的原因，他没再回答。</p>
+<p>但是我觉得原因肯定不仅仅是这个，毕竟大部分应用和算法都是<strong>以空间换时间</strong>。<br>以<code>user_id</code>应该有某种效率上的优势才对，虽然我现在认为看起来反而使用<code>user_id</code>效率反而应该低些。</p>
+<p>理由是：用户登录提供的是<code>username</code>，因此，如果用户主表是以<code>user_id</code>作为主键，那么应用需要通过登录用户提供的<code>username</code>在用户主表中查询出<code>user_id</code>，然后在用户分表中通过在用户主表查询出来的<code>user_id</code>来查询用户其他相关信息。<br>而如果直接采用<code>username</code>的话，不需要在用户主表做查询了，直接就可以拿着<code>username</code>在各种用户分表查各种用户信息。</p>
+<p>当然，上面的理由其实都是我的一种猜测而已，正确的学习习惯是<strong>学习不能够想当然</strong>，因此，猜测归猜测，终归还是要验证的。</p>
+<p>我只好找了一位已在工作中的前辈（外校的一个学长，帮助我解决了许多问题）询问这个问题。</p>
+<p>在我与他的讨论中，他给出了如下的回答：</p>
+<ol>
+<li>老师说的没错，确实是能够节省存储</li>
+<li>通常实践中也确实是使用整数类型的<code>user_id</code>来做主键的</li>
+<li>整数字段做主键更加易于分表</li>
+<li>自增主键比起字符串做索引，效率更高（看，果然有效率的问题哈）</li>
+<li><code>username</code>这个东西过于偏向业务，如果今后系统还需要允许邮箱登录，手机号登录呢？</li>
+</ol>
+<p>以上的回答我认为第3,4,5点是非常重要的原因。<br>3,4的原因可以归结为在效率上和分表操作性上确实比用<code>username</code>做主键要好；<br>5则说明了对于那种扩展登录的业务，使用里面任何一种登录方式的字段作为主键都不太合适。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>软件工程的老师上课说数据库中的用户数据表的主键要用自增的<code>user_id</code>做主键，而不要用<code>username</code>做主键。</p>
+<p>这让我产生了一些疑问。</p>
+<p>首先，用户登录时提供的账号信息必然是自选的字符串<code]]>
+    </summary>
+    
+      <category term="Witcoder" scheme="http://jzqt.github.io/tags/Witcoder/"/>
+    
+      <category term="数据库" scheme="http://jzqt.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="Witcoder开发者之路" scheme="http://jzqt.github.io/categories/Witcoder%E5%BC%80%E5%8F%91%E8%80%85%E4%B9%8B%E8%B7%AF/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[关于Python的一次小记]]></title>
