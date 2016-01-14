@@ -4,7 +4,7 @@
   <subtitle><![CDATA[三人行，必有我师焉；择其善者而从之，其不善者而改之]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://jzqt.github.io/"/>
-  <updated>2015-11-05T15:01:57.000Z</updated>
+  <updated>2016-01-14T09:28:00.000Z</updated>
   <id>http://jzqt.github.io/</id>
   
   <author>
@@ -13,6 +13,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[SQLAlchemy笔记]]></title>
+    <link href="http://jzqt.github.io/2015/12/29/SQLAlchemy%E7%AC%94%E8%AE%B0/"/>
+    <id>http://jzqt.github.io/2015/12/29/SQLAlchemy笔记/</id>
+    <published>2015-12-29T09:29:04.000Z</published>
+    <updated>2016-01-14T09:28:00.000Z</updated>
+    <content type="html"><![CDATA[<p>用SQLAlchemy做ORM也有一段时间了，总结一下用过的一些地方。</p>
+<h1 id="连接数据库">连接数据库</h1><p>SQLAlchemy通过一个url连接数据库，这个url包含了连接数据库相关的信息。</p>
+<h2 id="数据库连接URL">数据库连接URL</h2><p>以MySQL为例，url的格式是<code>mysql+{driver}://{username}:{password}@{host}:{port}/{name}</code>，<br>其中<code>driver</code>是Python的数据库驱动，比如MySQL官方的数据库驱动<code>mysql-connector-python</code>，<code>driver</code>是<code>mysqlconnector</code>；<br><code>username</code>是数据库用户名；<code>password</code>是密码；<code>host</code>是数据库主机；<code>port</code>是数据库端口；<code>name</code>是数据库名。</p>
+<h2 id="创建数据库引擎，元数据以及会话等">创建数据库引擎，元数据以及会话等</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sqlalchemy <span class="keyword">import</span> create_engine, MetaData</span><br><span class="line"><span class="keyword">from</span> sqlalchemy.orm <span class="keyword">import</span> sessionmaker</span><br><span class="line"></span><br><span class="line">db_url = <span class="string">"mysql+mysqlconnector://root:@localhost:3306/test"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过数据库连接url创建数据库引擎</span></span><br><span class="line"><span class="comment"># 如果想回显SQLAlchemy操作数据库的日志，设置echo=True</span></span><br><span class="line">engine = create_engine(db_url, echo=<span class="keyword">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过数据库引擎绑定元信息</span></span><br><span class="line">metadata = MetaData(engine)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过绑定数据库引擎获取数据库会话类</span></span><br><span class="line">Session = sessionmaker(bind=engine) </span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取数据库会话</span></span><br><span class="line">session = Session()</span><br></pre></td></tr></table></figure>
+<p>一个<strong>Session</strong>实例可以理解成一个数据库连接，可以通过它来操作数据库；<br>也可以将它理解成一个容器，各种对象的实例存储在其中。</p>
+<h2 id="数据库连接池">数据库连接池</h2><p><strong>注意</strong>：以上的连接数据库方式获取数据库连接是使用默认的数据库连接池的，<br>如果不想使用数据库连接池的话可以用以下方式创建数据库引擎。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sqlalchemy <span class="keyword">import</span> create_engine</span><br><span class="line"><span class="keyword">from</span> sqlalchemy.pool <span class="keyword">import</span> NullPool</span><br><span class="line"></span><br><span class="line">db_url = <span class="string">"mysql+mysqlconnector://root:@localhost:3306/test"</span></span><br><span class="line"></span><br><span class="line">engine = create_engine(db_url, poolclass=NullPool)</span><br></pre></td></tr></table></figure>
+<h1 id="操作数据库">操作数据库</h1><h2 id="声明映射">声明映射</h2><p>在数据库中定义一个数据表在Python中则是定义一个类，要维持从类到表的关系，首先就要先声明一个映射。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sqlalchemy.ext.declarative <span class="keyword">import</span> declarative_base</span><br><span class="line"></span><br><span class="line"><span class="comment"># 所有继承自`Base`的实体类都会自动映射数据表</span></span><br><span class="line">Base = declarative_base()</span><br></pre></td></tr></table></figure>
+<p>然后就可以通过继承<code>Base</code>类来定义映射到数据表中的类了。</p>
+<p><strong>注意</strong>：<code>declarative_base()</code>生成的类，该类的子类一般都必须与数据库中的一张表对应，<br>如果想扩充这个基类，让所有子类都能使用，可以用如下方法。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sqlalchemy.ext.declarative <span class="keyword">import</span> declarative_base</span><br><span class="line"></span><br><span class="line">Base = declarative_base()</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaseModel</span><span class="params">(Base)</span>:</span></span><br><span class="line">    </span><br><span class="line">    __abstract__ = <span class="keyword">True</span>     <span class="comment"># 这样BaseModel类就不用对应数据库中的表了</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># ... 扩充BaseModel类</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<h2 id="定义数据表">定义数据表</h2><p>现在尝试创建一个简单的数据表。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sqlalchemy <span class="keyword">import</span> Integer, String, Enum, Column</span><br><span class="line"><span class="keyword">from</span> sqlalchemy.ext.declarative <span class="keyword">import</span> declarative_base</span><br><span class="line"></span><br><span class="line">Base = declarative_base()</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(Base)</span>:</span></span><br><span class="line"></span><br><span class="line">    __tablename__ = <span class="string">"tb_student"</span>            <span class="comment"># 数据表名</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 下面是各个字段</span></span><br><span class="line">    id = Column(Integer, primary_key=<span class="keyword">True</span>)      <span class="comment"># `id`字段，整数类型，被设置为主键</span></span><br><span class="line">    name = Column(String(<span class="number">30</span>), nullable=<span class="keyword">False</span>)   <span class="comment"># `name`字段，字符串类型，最大长度30，设置为NOT NULL</span></span><br><span class="line">    sex = Column(Enum(<span class="string">'male'</span>, <span class="string">'female'</span>))        <span class="comment"># `sex`字段，枚举类型</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<p><code>Integer</code>，<code>String</code>，<code>Enum</code>等数据类型都是SQLAlchemy定义的，会根据使用的数据库不同而使用数据库中对应的类型，<br>你也可以使用特定数据库的特定类型，以MySQL为例。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sqlalchemy.dialects.mysql <span class="keyword">import</span> INTEGER, ENUM, VARCHAR, TINYINT, TEXT, BLOB, DATETIME</span><br></pre></td></tr></table></figure>
+<h2 id="创建数据表">创建数据表</h2><p>上面的代码只是声明这么一个类<code>Student</code>映射数据表<code>tb_student</code>，创建数据表的操作需要如下代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建所有数据表，会在数据库中执行`CREATE TABLE ...`语句</span></span><br><span class="line">Base.metadata.create_all(engine)</span><br></pre></td></tr></table></figure>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>用SQLAlchemy做ORM也有一段时间了，总结一下用过的一些地方。</p>
+<h1 id="连接数据库">连接数据库</h1><p>SQLAlchemy通过一个url连接数据库，这个url包含了连接数据库相关的信息。</p>
+<h2 id="数据库连接URL">数据库连]]>
+    </summary>
+    
+      <category term="ORM" scheme="http://jzqt.github.io/tags/ORM/"/>
+    
+      <category term="Python" scheme="http://jzqt.github.io/tags/Python/"/>
+    
+      <category term="SQLAlchemy" scheme="http://jzqt.github.io/tags/SQLAlchemy/"/>
+    
+      <category term="数据库" scheme="http://jzqt.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+      <category term="备忘" scheme="http://jzqt.github.io/categories/%E5%A4%87%E5%BF%98/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[用户数据库的设计]]></title>
