@@ -4,29 +4,29 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Witcoder开发之路 | 剑紫青天</title>
+    <title>Python中or和and运算的返回值问题 | 剑紫青天</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="剑紫青天">
     
 
     
-    <meta name="description" content="想做一个Virtual Judge网站。从大二的寒假这个想法开始萌芽到现在大三将它作为软件工程的实践项目来立项，已经有一个多学期了。
-这一个多学期我都在步步准备，我当初简单想做个VJ的想法也在步步完善。现在已经成功在软件工程课中将它作为实践项目，可以光明正大正正经经和小伙伴们一起实现自己的想法了。这个软件工程课的开始就是Witcoder的开始，但是这个课的结束绝不是Witcoder的结束。
-从开始">
+    <meta name="description" content="机缘巧合之下发现Python的or和and运算后的返回值居然不是bool类型。
+12345678910&amp;gt;&amp;gt;&amp;gt; &apos;yes&apos; or &apos;no&apos;&apos;yes&apos;&amp;gt;&amp;gt;&amp;gt; 0 or 11&amp;gt;&amp;gt;&amp;gt; &apos;yes&apos; and &apos;no&apos;&apos;no&apos;&amp;gt;&amp;gt;&amp;gt; 1 and 00&amp;gt;&amp;gt;&amp;gt; 0 and 10
+显然，x and y and z and ...">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Witcoder开发之路">
-<meta property="og:url" content="http://jzqt.github.io/2015/10/20/Witcoder开发之路/index.html">
+<meta property="og:title" content="Python中or和and运算的返回值问题">
+<meta property="og:url" content="http://jzqt.github.io/2016/03/19/Python中or和and运算的返回值问题/index.html">
 <meta property="og:site_name" content="剑紫青天">
-<meta property="og:description" content="想做一个Virtual Judge网站。从大二的寒假这个想法开始萌芽到现在大三将它作为软件工程的实践项目来立项，已经有一个多学期了。
-这一个多学期我都在步步准备，我当初简单想做个VJ的想法也在步步完善。现在已经成功在软件工程课中将它作为实践项目，可以光明正大正正经经和小伙伴们一起实现自己的想法了。这个软件工程课的开始就是Witcoder的开始，但是这个课的结束绝不是Witcoder的结束。
-从开始">
-<meta property="og:updated_time" content="2015-10-20T17:11:45.000Z">
+<meta property="og:description" content="机缘巧合之下发现Python的or和and运算后的返回值居然不是bool类型。
+12345678910&amp;gt;&amp;gt;&amp;gt; &apos;yes&apos; or &apos;no&apos;&apos;yes&apos;&amp;gt;&amp;gt;&amp;gt; 0 or 11&amp;gt;&amp;gt;&amp;gt; &apos;yes&apos; and &apos;no&apos;&apos;no&apos;&amp;gt;&amp;gt;&amp;gt; 1 and 00&amp;gt;&amp;gt;&amp;gt; 0 and 10
+显然，x and y and z and ...">
+<meta property="og:updated_time" content="2016-03-20T06:46:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Witcoder开发之路">
-<meta name="twitter:description" content="想做一个Virtual Judge网站。从大二的寒假这个想法开始萌芽到现在大三将它作为软件工程的实践项目来立项，已经有一个多学期了。
-这一个多学期我都在步步准备，我当初简单想做个VJ的想法也在步步完善。现在已经成功在软件工程课中将它作为实践项目，可以光明正大正正经经和小伙伴们一起实现自己的想法了。这个软件工程课的开始就是Witcoder的开始，但是这个课的结束绝不是Witcoder的结束。
-从开始">
+<meta name="twitter:title" content="Python中or和and运算的返回值问题">
+<meta name="twitter:description" content="机缘巧合之下发现Python的or和and运算后的返回值居然不是bool类型。
+12345678910&amp;gt;&amp;gt;&amp;gt; &apos;yes&apos; or &apos;no&apos;&apos;yes&apos;&amp;gt;&amp;gt;&amp;gt; 0 or 11&amp;gt;&amp;gt;&amp;gt; &apos;yes&apos; and &apos;no&apos;&apos;no&apos;&amp;gt;&amp;gt;&amp;gt; 1 and 00&amp;gt;&amp;gt;&amp;gt; 0 and 10
+显然，x and y and z and ...">
 
     
     <link rel="alternative" href="/atom.xml" title="剑紫青天" type="application/atom+xml">
@@ -86,14 +86,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/10/20/Witcoder开发之路/" title="Witcoder开发之路" itemprop="url">Witcoder开发之路</a>
+      <a href="/2016/03/19/Python中or和and运算的返回值问题/" title="Python中or和and运算的返回值问题" itemprop="url">Python中or和and运算的返回值问题</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="剑紫青天" target="_blank" itemprop="author">剑紫青天</a>
 		
   <p class="article-time">
-    <time datetime="2015-10-20T04:10:28.000Z" itemprop="datePublished"> 发表于 2015-10-20</time>
+    <time datetime="2016-03-19T14:23:25.000Z" itemprop="datePublished"> 发表于 2016-03-19</time>
     
   </p>
 </header>
@@ -106,10 +106,18 @@
 		
 		</div>
 		
-		<p>想做一个Virtual Judge网站。<br>从大二的寒假这个想法开始萌芽到现在大三将它作为软件工程的实践项目来立项，已经有一个多学期了。</p>
-<p>这一个多学期我都在步步准备，我当初简单想做个VJ的想法也在步步完善。<br>现在已经成功在软件工程课中将它作为实践项目，可以光明正大正正经经和小伙伴们一起实现自己的想法了。<br>这个软件工程课的开始就是Witcoder的开始，但是这个课的结束绝不是Witcoder的结束。</p>
-<p>从开始立项到现在为止已经有四周了，开发的过程中有很多有趣的事情，所以我打算写些文章将它们记录下来。</p>
-<p>恩，这个系列就叫做<code>Witcoder开发之路</code>好了。</p>
+		<p>机缘巧合之下发现Python的<code>or</code>和<code>and</code>运算后的返回值居然不是<code>bool</code>类型。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="string">'yes'</span> <span class="keyword">or</span> <span class="string">'no'</span></span><br><span class="line"><span class="string">'yes'</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="number">0</span> <span class="keyword">or</span> <span class="number">1</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="string">'yes'</span> <span class="keyword">and</span> <span class="string">'no'</span></span><br><span class="line"><span class="string">'no'</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="number">1</span> <span class="keyword">and</span> <span class="number">0</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="prompt">&gt;&gt;&gt; </span><span class="number">0</span> <span class="keyword">and</span> <span class="number">1</span></span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>显然，<code>x and y and z and ...</code>运算遇到第一个布尔值为<strong>假</strong>的变量返回，如果没有则返回最后一个变量，<br><code>x or y or z or ...</code>运算遇到第一个布尔值为<strong>真</strong>的变量返回，如果没有也返回最后一个变量。</p>
+<p>在我们的认知中，一般逻辑运算的结果就只有<code>True</code>和<code>False</code>，而Python逻辑运算这样的特性对我们Python编程有什么样的影响呢？</p>
+<p>在判断逻辑运算的结果方面，绝不能采用<code>is True</code>或<code>== True</code>等判断方式（当然，这样也是十分不Pythonic的，相信这样干的人几乎没有吧）。</p>
+<p>这样的特性还可以改写一些Python的三目运算，比如</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = b <span class="keyword">if</span> b <span class="keyword">else</span> c</span><br><span class="line"><span class="comment"># 可改写为</span></span><br><span class="line">a = b <span class="keyword">or</span> c</span><br><span class="line"></span><br><span class="line">a = b <span class="keyword">if</span> c <span class="keyword">else</span> d</span><br><span class="line"><span class="comment"># 改写为</span></span><br><span class="line">a = c <span class="keyword">and</span> b <span class="keyword">or</span> d    <span class="comment"># 这样改写的前提条件是b必须为真</span></span><br></pre></td></tr></table></figure>
+<p>同样，你也可以根据<code>and</code>运算返回特性简写一些代码，不赘述。</p>
+<p>这个特性还可以很好解决一些代码风格问题，比如</p>
+<p>一般来说，不推荐让<code>list</code>，<code>dict</code>等这样的可变对象作为Python函数的默认参数，那么如果你想让这两个可变对象做参数默认值又不想违反这个代码风格要怎么办呢？</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(arg=[])</span>:</span></span><br><span class="line">    <span class="comment"># do somethine</span></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 改写后的函数</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(arg=None)</span>:</span></span><br><span class="line">    arg = arg <span class="keyword">or</span> []</span><br><span class="line">    <span class="comment"># do somethine</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<p>这样就充分解决了风格的统一问题，实际上类似这样利用Python逻辑运算返回值特性的写法，在Django代码中也有大量使用。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -117,13 +125,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Witcoder开发之路/">Witcoder开发之路</a>
+  <a class="article-category-link" href="/categories/程序设计之路/">程序设计之路</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Witcoder/">Witcoder</a><a href="/tags/杂记/">杂记</a>
+  <span></span> <a href="/tags/Python/">Python</a>
   </div>
 
 </div>
@@ -132,7 +140,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://jzqt.github.io/2015/10/20/Witcoder开发之路/" data-title="Witcoder开发之路 | 剑紫青天" data-tsina="null" class="share clearfix">
+	  <div data-url="http://jzqt.github.io/2016/03/19/Python中or和and运算的返回值问题/" data-title="Python中or和and运算的返回值问题 | 剑紫青天" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -145,19 +153,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/10/20/一个像素的问题/" title="一个像素的问题">
-  <strong>上一篇：</strong><br/>
-  <span>
-  一个像素的问题</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/07/21/ACM图论之存图方式/"  title="ACM图论之存图方式">
+<a href="/2015/12/29/SQLAlchemy笔记/"  title="SQLAlchemy笔记">
  <strong>下一篇：</strong><br/> 
- <span>ACM图论之存图方式
+ <span>SQLAlchemy笔记
 </span>
 </a>
 </div>
@@ -166,7 +166,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/10/20/Witcoder开发之路/" data-title="Witcoder开发之路" data-url="http://jzqt.github.io/2015/10/20/Witcoder开发之路/"></div>
+	<div class="ds-thread" data-thread-key="2016/03/19/Python中or和and运算的返回值问题/" data-title="Python中or和and运算的返回值问题" data-url="http://jzqt.github.io/2016/03/19/Python中or和and运算的返回值问题/"></div>
 </section>
 
 
