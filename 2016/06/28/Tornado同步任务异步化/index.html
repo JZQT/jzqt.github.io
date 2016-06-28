@@ -4,29 +4,32 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Witcoder开发之路 | 剑紫青天</title>
+    <title>Tornado同步任务异步化 | 剑紫青天</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="剑紫青天">
     
 
     
-    <meta name="description" content="想做一个Virtual Judge网站。从大二的寒假这个想法开始萌芽到现在大三将它作为软件工程的实践项目来立项，已经有一个多学期了。
-这一个多学期我都在步步准备，我当初简单想做个VJ的想法也在步步完善。现在已经成功在软件工程课中将它作为实践项目，可以光明正大正正经经和小伙伴们一起实现自己的想法了。这个软件工程课的开始就是Witcoder的开始，但是这个课的结束绝不是Witcoder的结束。
-从开始">
+    <meta name="description" content="在Tornado中，要使一个任务，我们经常需要用Tornado自己的异步模块，或者适配Tornado的第三方异步模块。
+但很多情况下我们需要的功能模块可能没有适配Tornado的异步模型，然后我们自己又不可能造一个轮子。这个时候，我们就可以使用Tornado自带的通过线程来将同步方法异步化。
+虽然Tornado是单线程异步的Web框架，但是它也提供了使用线程来将同步任务异步化的装饰器。
+在torn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Witcoder开发之路">
-<meta property="og:url" content="http://jzqt.github.io/2015/10/20/Witcoder开发之路/index.html">
+<meta property="og:title" content="Tornado同步任务异步化">
+<meta property="og:url" content="http://jzqt.github.io/2016/06/28/Tornado同步任务异步化/index.html">
 <meta property="og:site_name" content="剑紫青天">
-<meta property="og:description" content="想做一个Virtual Judge网站。从大二的寒假这个想法开始萌芽到现在大三将它作为软件工程的实践项目来立项，已经有一个多学期了。
-这一个多学期我都在步步准备，我当初简单想做个VJ的想法也在步步完善。现在已经成功在软件工程课中将它作为实践项目，可以光明正大正正经经和小伙伴们一起实现自己的想法了。这个软件工程课的开始就是Witcoder的开始，但是这个课的结束绝不是Witcoder的结束。
-从开始">
-<meta property="og:updated_time" content="2015-10-20T17:11:45.802Z">
+<meta property="og:description" content="在Tornado中，要使一个任务，我们经常需要用Tornado自己的异步模块，或者适配Tornado的第三方异步模块。
+但很多情况下我们需要的功能模块可能没有适配Tornado的异步模型，然后我们自己又不可能造一个轮子。这个时候，我们就可以使用Tornado自带的通过线程来将同步方法异步化。
+虽然Tornado是单线程异步的Web框架，但是它也提供了使用线程来将同步任务异步化的装饰器。
+在torn">
+<meta property="og:updated_time" content="2016-06-28T16:44:37.378Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Witcoder开发之路">
-<meta name="twitter:description" content="想做一个Virtual Judge网站。从大二的寒假这个想法开始萌芽到现在大三将它作为软件工程的实践项目来立项，已经有一个多学期了。
-这一个多学期我都在步步准备，我当初简单想做个VJ的想法也在步步完善。现在已经成功在软件工程课中将它作为实践项目，可以光明正大正正经经和小伙伴们一起实现自己的想法了。这个软件工程课的开始就是Witcoder的开始，但是这个课的结束绝不是Witcoder的结束。
-从开始">
+<meta name="twitter:title" content="Tornado同步任务异步化">
+<meta name="twitter:description" content="在Tornado中，要使一个任务，我们经常需要用Tornado自己的异步模块，或者适配Tornado的第三方异步模块。
+但很多情况下我们需要的功能模块可能没有适配Tornado的异步模型，然后我们自己又不可能造一个轮子。这个时候，我们就可以使用Tornado自带的通过线程来将同步方法异步化。
+虽然Tornado是单线程异步的Web框架，但是它也提供了使用线程来将同步任务异步化的装饰器。
+在torn">
 
     
     <link rel="alternative" href="/atom.xml" title="剑紫青天" type="application/atom+xml">
@@ -86,14 +89,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/10/20/Witcoder开发之路/" title="Witcoder开发之路" itemprop="url">Witcoder开发之路</a>
+      <a href="/2016/06/28/Tornado同步任务异步化/" title="Tornado同步任务异步化" itemprop="url">Tornado同步任务异步化</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="剑紫青天" target="_blank" itemprop="author">剑紫青天</a>
 		
   <p class="article-time">
-    <time datetime="2015-10-20T04:10:28.000Z" itemprop="datePublished"> 发表于 2015-10-20</time>
+    <time datetime="2016-06-28T02:10:57.000Z" itemprop="datePublished"> 发表于 2016-06-28</time>
     
   </p>
 </header>
@@ -106,10 +109,16 @@
 		
 		</div>
 		
-		<p>想做一个Virtual Judge网站。<br>从大二的寒假这个想法开始萌芽到现在大三将它作为软件工程的实践项目来立项，已经有一个多学期了。</p>
-<p>这一个多学期我都在步步准备，我当初简单想做个VJ的想法也在步步完善。<br>现在已经成功在软件工程课中将它作为实践项目，可以光明正大正正经经和小伙伴们一起实现自己的想法了。<br>这个软件工程课的开始就是Witcoder的开始，但是这个课的结束绝不是Witcoder的结束。</p>
-<p>从开始立项到现在为止已经有四周了，开发的过程中有很多有趣的事情，所以我打算写些文章将它们记录下来。</p>
-<p>恩，这个系列就叫做<code>Witcoder开发之路</code>好了。</p>
+		<p>在<code>Tornado</code>中，要使一个任务，我们经常需要用<code>Tornado</code>自己的异步模块，或者适配<code>Tornado</code>的第三方异步模块。</p>
+<p>但很多情况下我们需要的功能模块可能没有适配<code>Tornado</code>的异步模型，然后我们自己又不可能造一个轮子。<br>这个时候，我们就可以使用<code>Tornado</code>自带的通过线程来将同步方法异步化。</p>
+<p>虽然<code>Tornado</code>是单线程异步的Web框架，但是它也提供了使用线程来将同步任务异步化的装饰器。</p>
+<p>在<code>tornado.concurrent</code>这个模块中有一个装饰器<code>run_on_executor</code>，使用它装饰在请求处理器的方法上，来使用线程将该同步任务异步话。</p>
+<p>下面给出示例代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> concurrent.futures</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> tornado.web</span><br><span class="line"><span class="keyword">import</span> tornado.concurrent</span><br><span class="line"><span class="keyword">import</span> tornado.ioloop</span><br><span class="line"><span class="keyword">import</span> tornado.gen</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AsyncHandler</span><span class="params">(tornado.web.RequestHandler)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 要求请求处理器有一个`executor`属性表示异步执行器</span></span><br><span class="line">    <span class="comment"># 创建一个size为4的线程池执行器</span></span><br><span class="line">    executor = concurrent.futures.ThreadPoolExecutor(<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="decorator">    @tornado.gen.coroutine</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self)</span>:</span></span><br><span class="line">        futures = [self.sleep(<span class="number">1</span>) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">8</span>)]</span><br><span class="line">        results = <span class="keyword">yield</span> futures</span><br><span class="line">        print(results)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 同步任务通过执行器异步化</span></span><br><span class="line"><span class="decorator">    @tornado.concurrent.run_on_executor</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">sleep</span><span class="params">(self, sec)</span>:</span></span><br><span class="line">        time.sleep(sec)</span><br><span class="line">        <span class="keyword">return</span> time.time()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    app = tornado.web.Application([(<span class="string">r"/"</span>, AsyncHandler)])</span><br><span class="line">    app.listen(<span class="number">8000</span>)</span><br><span class="line">    tornado.ioloop.IOLoop.current().start()</span><br></pre></td></tr></table></figure>
+<p>启动Web服务后，访问<code>/</code>。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jzqt@Dreamer:~$ curl localhost:<span class="number">8000</span>/</span><br><span class="line">[<span class="number">1467202920.2401285</span>, <span class="number">1467202920.240263</span>, <span class="number">1467202920.2402115</span>, <span class="number">1467202920.2403257</span>, <span class="number">1467202921.240244</span>, <span class="number">1467202921.2412646</span>, <span class="number">1467202921.2413185</span>, <span class="number">1467202921.241381</span>]</span><br></pre></td></tr></table></figure>
+<p>可以看出，同步任务确实是异步化了。上面的用例是通过线程池来异步的，更多的使用方法就不多讲了，可以研究官方文档等。</p>
+<p><strong>注意</strong>：计算密集型任务使用线程优化作用不大，因为Python有GIL大家懂得。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -117,13 +126,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/Witcoder开发之路/">Witcoder开发之路</a>
+  <a class="article-category-link" href="/categories/程序设计/">程序设计</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/Witcoder/">Witcoder</a><a href="/tags/杂记/">杂记</a>
+  <span></span> <a href="/tags/Python/">Python</a><a href="/tags/Tornado/">Tornado</a>
   </div>
 
 </div>
@@ -132,7 +141,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://jzqt.github.io/2015/10/20/Witcoder开发之路/" data-title="Witcoder开发之路 | 剑紫青天" data-tsina="null" class="share clearfix">
+	  <div data-url="http://jzqt.github.io/2016/06/28/Tornado同步任务异步化/" data-title="Tornado同步任务异步化 | 剑紫青天" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -145,19 +154,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2015/10/20/一个像素的问题/" title="一个像素的问题">
-  <strong>上一篇：</strong><br/>
-  <span>
-  一个像素的问题</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2015/07/21/ACM图论之存图方式/"  title="ACM图论之存图方式">
+<a href="/2016/03/19/Python中or和and运算的返回值问题/"  title="Python中or和and运算的返回值问题">
  <strong>下一篇：</strong><br/> 
- <span>ACM图论之存图方式
+ <span>Python中or和and运算的返回值问题
 </span>
 </a>
 </div>
@@ -166,7 +167,7 @@
 
 	
 <section id="comments" class="comment">
-	<div class="ds-thread" data-thread-key="2015/10/20/Witcoder开发之路/" data-title="Witcoder开发之路" data-url="http://jzqt.github.io/2015/10/20/Witcoder开发之路/"></div>
+	<div class="ds-thread" data-thread-key="2016/06/28/Tornado同步任务异步化/" data-title="Tornado同步任务异步化" data-url="http://jzqt.github.io/2016/06/28/Tornado同步任务异步化/"></div>
 </section>
 
 
