@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://jzqt.github.io/2017/01/16/%E8%A7%A3%E5%86%B3tornado%E4%B8%AD%E4%BD%BF%E7%94%A8aiohttp%E7%9A%84ClientSession%E7%9A%84%E4%B8%80%E4%B8%AA%E6%96%B9%E6%B3%95/</loc>
+    <lastmod>2017-01-16T16:32:13.177Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://jzqt.github.io/about/index.html</loc>
+    <lastmod>2017-01-16T15:41:16.339Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://jzqt.github.io/2016/07/03/SQLAlchemy%E5%81%9A%E5%85%B3%E8%81%94%E6%9F%A5%E8%AF%A2%E6%97%B6%E7%9A%84filter%E9%97%AE%E9%A2%98/</loc>
     <lastmod>2016-08-14T07:54:34.492Z</lastmod>
   </url>
@@ -54,11 +64,6 @@
   <url>
     <loc>http://jzqt.github.io/2015/10/20/%E5%85%B3%E4%BA%8EPython%E7%9A%84%E4%B8%80%E6%AC%A1%E5%B0%8F%E8%AE%B0/</loc>
     <lastmod>2015-10-20T17:09:38.862Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://jzqt.github.io/about/index.html</loc>
-    <lastmod>2015-10-19T15:40:12.260Z</lastmod>
   </url>
   
 </urlset>
