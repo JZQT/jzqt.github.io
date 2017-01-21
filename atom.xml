@@ -42,11 +42,11 @@
   </entry>
   
   <entry>
-    <title><![CDATA[解决tornado中使用aiohttp的ClientSession的一个方法]]></title>
+    <title><![CDATA[tornado中使用aiohttp的ClientSession出现异常的一个解决办法]]></title>
     <link href="http://jzqt.github.io/2017/01/16/tornado%E4%B8%AD%E4%BD%BF%E7%94%A8aiohttp%E7%9A%84ClientSession%E5%87%BA%E7%8E%B0%E5%BC%82%E5%B8%B8%E7%9A%84%E4%B8%80%E4%B8%AA%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
     <id>http://jzqt.github.io/2017/01/16/tornado中使用aiohttp的ClientSession出现异常的一个解决办法/</id>
     <published>2017-01-16T10:22:27.000Z</published>
-    <updated>2017-01-19T06:48:42.852Z</updated>
+    <updated>2017-01-21T15:16:09.509Z</updated>
     <content type="html"><![CDATA[<p>自从<code>Python 3.5</code>之后允许<code>async/await</code>关键字来定义原生<strong>协程</strong>之后，<code>aiohttp</code>等基于<code>asyncio</code>标准库的异步库就在蓬勃发展。<br><code>tornado</code>也对<code>async/await</code>关键字定义的原生协程做了一定的兼容。<br>由于<code>tornado</code>的<code>httpclient</code>功能不太强大（比如不支持cookie保持回话等）。<br>所以我打算使用<code>aiohttp</code>里面的<code>ClientSession</code>来做HTTP客户端。</p>
 <p>不过在使用的过程中发现在<code>tornado</code>中使用<code>aiohttp</code>的会有些问题。</p>
 <p>示例如下：</p>
