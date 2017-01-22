@@ -272,7 +272,7 @@
     <link href="http://jzqt.github.io/2015/10/26/%E7%94%A8%E6%88%B7%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E8%AE%BE%E8%AE%A1/"/>
     <id>http://jzqt.github.io/2015/10/26/用户数据库的设计/</id>
     <published>2015-10-26T14:34:48.000Z</published>
-    <updated>2015-11-05T15:01:57.845Z</updated>
+    <updated>2017-01-22T06:21:44.703Z</updated>
     <content type="html"><![CDATA[<p>软件工程的老师上课说数据库中的用户数据表的主键要用自增的<code>user_id</code>做主键，而不要用<code>username</code>做主键。</p>
 <p>这让我产生了一些疑问。</p>
 <p>首先，用户登录时提供的账号信息必然是自选的字符串<code>username</code>，而不是整数类型的自增主键<code>user_id</code>。<br>我认为<code>username</code>与<code>user_id</code>其实都是具有唯一性约束的字段。因此<code>username</code>完全可以替代<code>user_id</code>的作用，所以<code>user_id</code>就显得没那么有必要了。<br>如果没有其他足够的理由（比如优化之类的，可能我还不知道这个理由）是不应该引进这么个“多余”的字段的。</p>
@@ -300,11 +300,9 @@
 <p>首先，用户登录时提供的账号信息必然是自选的字符串<code]]>
     </summary>
     
-      <category term="Witcoder" scheme="http://jzqt.github.io/tags/Witcoder/"/>
-    
       <category term="数据库" scheme="http://jzqt.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
-      <category term="Witcoder开发之路" scheme="http://jzqt.github.io/categories/Witcoder%E5%BC%80%E5%8F%91%E4%B9%8B%E8%B7%AF/"/>
+      <category term="程序设计" scheme="http://jzqt.github.io/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
     
   </entry>
   
@@ -339,97 +337,6 @@
       <category term="杂记" scheme="http://jzqt.github.io/tags/%E6%9D%82%E8%AE%B0/"/>
     
       <category term="杂记" scheme="http://jzqt.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[色彩的纠结（比赛训练状态标签）]]></title>
-    <link href="http://jzqt.github.io/2015/10/20/%E8%89%B2%E5%BD%A9%E7%9A%84%E7%BA%A0%E7%BB%93%EF%BC%88%E6%AF%94%E8%B5%9B%E8%AE%AD%E7%BB%83%E7%8A%B6%E6%80%81%E6%A0%87%E7%AD%BE%EF%BC%89/"/>
-    <id>http://jzqt.github.io/2015/10/20/色彩的纠结（比赛训练状态标签）/</id>
-    <published>2015-10-20T04:17:08.000Z</published>
-    <updated>2015-10-20T17:11:32.754Z</updated>
-    <content type="html"><![CDATA[<p>Witcoder的比赛训练有三种状态。<br>分别是<code>未开始</code>，<code>进行中</code>和<code>已结束</code>。</p>
-<p>可是，在选择颜色代表它们的时候，我们陷入了纠结。<br>下面是几种考虑的方案。</p>
-<p><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019152005.png" alt=""><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019152503.png" alt=""><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019152813.png" alt=""><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019153135.png" alt=""></p>
-<p>后面还有很多，就不按照颜色排列组合一一上图了。反正就是这样。</p>
-<p>对于<code>已结束</code>这个标签，基本是比较好选择的。最开始我们选择的是红色的标签。后来我们看了下Bootstrap里面的标签，发现其实还有个灰色的默认标签。我觉得可能灰色更加好，因为<strong>红色的标签感觉给人以强调，禁止，重点的意思</strong>，而<strong>灰色给人以沉闷，没有生机的感觉</strong>，正好能匹配<code>已结束</code>的意思。<br>这个搭配在团队里有获得一致的认可。</p>
-<p><code>进行中</code>这个标签稍微有一点点争议，到底是选择蓝色还是绿色还真不好说。我对自己的审美一向都不敢恭维，选择蓝色感觉标签能更加清楚直接地被看到，而选择绿色，从逻辑上来说，<strong>绿色有通行，成功的意味</strong>，正好只有在比赛训练状态在<code>进行中</code>的时候才可以开始做题。<br>最后选择还是使用绿色标签来表示<code>进行中</code>，毕竟感觉<strong>逻辑</strong>才是最重要的，一群理科生啊唉。</p>
-<p><code>未开始</code>是最坑爹的了。完全不知道该选什么，对于该什么颜色的逻辑也是非常不明确的。最后我暂定为淡蓝色。毕竟<code>未开始</code>我想应该用淡一点的颜色吧（我也不知道这是什么想法）。</p>
-<p>虽然过程波折重重，总的来说团队成员都没有什么异议。最后颜色就暂定为这样。<br><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019152005.png" alt=""></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Witcoder的比赛训练有三种状态。<br>分别是<code>未开始</code>，<code>进行中</code>和<code>已结束</code>。</p>
-<p>可是，在选择颜色代表它们的时候，我们陷入了纠结。<br>下面是几种考虑的方案。</p>
-<p><img ]]>
-    </summary>
-    
-      <category term="Witcoder" scheme="http://jzqt.github.io/tags/Witcoder/"/>
-    
-      <category term="杂记" scheme="http://jzqt.github.io/tags/%E6%9D%82%E8%AE%B0/"/>
-    
-      <category term="Witcoder开发之路" scheme="http://jzqt.github.io/categories/Witcoder%E5%BC%80%E5%8F%91%E4%B9%8B%E8%B7%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[一个像素的问题]]></title>
-    <link href="http://jzqt.github.io/2015/10/20/%E4%B8%80%E4%B8%AA%E5%83%8F%E7%B4%A0%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>http://jzqt.github.io/2015/10/20/一个像素的问题/</id>
-    <published>2015-10-20T04:15:54.000Z</published>
-    <updated>2015-10-20T17:12:44.810Z</updated>
-    <content type="html"><![CDATA[<p>下面这个故事，需要眼睛好点的人才能看懂（并不是说近视眼就算眼睛不好，主要是要眼尖，比如我虽然近视，但是眼尖）。</p>
-<h2 id="开始">开始</h2><p><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019202659.png" alt="1px"></p>
-<p>上面是Witcoder的导航栏。看到了没有？有没有发现？<br>没错，首页的下面有一个像素的线没有被染成和首页一样的灰色！（看不出来的眼睛都不尖～～）<br>其实这个问题很久以前我就注意到了，奈何一直没有办法解决（虽然我号称全栈，其实也不过就是个会写简单HTML套Bootstrap的后端而已啦）。</p>
-<p>是可忍孰不可忍，这次我下了决心一定要把这个问题解决，于是我叫了我们团队负责前端的小龙（这货其实会做页面精细的修改但是居然不会套前端模板，无法理解）……</p>
-<h2 id="波折">波折</h2><p>其实小龙也无法独自解决这个坑爹的问题，但是正好我们打算把这个导航栏换个颜色，与网站整体颜色搭配。</p>
-<p>于是，导航栏就变成了这样。<br><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019205032.png" alt=""><br>看到了吗？发现了吗？那个<strong>1px</strong>的问题解决了！！！</p>
-<p>可是，好景不长，我们发现阿飞写的宣传页面居然…<br><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019210726.png" alt=""></p>
-<p>谁叫他写的页面主体颜色是青色的呢…<br>其他页面都跟前面那张图一样没有问题，于是我和小龙一致认为是阿飞单独写的这个页面有问题，于是我和小龙打算修改阿飞写的宣传页面。</p>
-<p>接下来各种研究原因研究HTML代码，无果。<br>小龙大胆猜想可能不是阿飞写的页面的问题，而是我们写的导航栏问题，只是因为其他页面的主体背景颜色是白色，所以没显示出来。</p>
-<p>于是我将其他页面的背景颜色修改成了黑色。效果变成了这样<br><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019211608.png" alt=""></p>
-<p>错怪阿飞了有木有？！</p>
-<h2 id="后来">后来</h2><p>好了，现在把这个bug定位到我们写的导航条了，我们仔细分析发现<br><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019221015.png" alt=""></p>
-<p><strong>Shit！怎么会有这么51这种坑爹的高度！！！</strong><br><img src="http://7xnmm9.com1.z0.glb.clouddn.com/u=2924251397,200844675&amp;fm=21&amp;gp=0.jpg" alt=""></p>
-<p>于是我们开始用强的了！<br><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019221335.png" alt=""></p>
-<p>结果<br><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019221641.png" alt=""><br>还是TMD有缝！而且…<br><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019221800.png" alt=""><br>高度却成功更改了……<br>我的心情是这样的<br><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019223230.png" alt=""></p>
-<h2 id="最终">最终</h2><p>不过仔细地无意地，我们发现<br><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%B1%E5%BA%A6%E6%88%AA%E5%9B%BE20151019223351.png" alt=""><br>原来是特么导航条右边的按钮有问题呀呀呀！！！</p>
-<p>接下来就不用多说了。</p>
-<p>至此，这个问题现在终于被完美解决了……</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>下面这个故事，需要眼睛好点的人才能看懂（并不是说近视眼就算眼睛不好，主要是要眼尖，比如我虽然近视，但是眼尖）。</p>
-<h2 id="开始">开始</h2><p><img src="http://7xnmm9.com1.z0.glb.clouddn.com/%E6%B7%]]>
-    </summary>
-    
-      <category term="Witcoder" scheme="http://jzqt.github.io/tags/Witcoder/"/>
-    
-      <category term="杂记" scheme="http://jzqt.github.io/tags/%E6%9D%82%E8%AE%B0/"/>
-    
-      <category term="Witcoder开发之路" scheme="http://jzqt.github.io/categories/Witcoder%E5%BC%80%E5%8F%91%E4%B9%8B%E8%B7%AF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Witcoder开发之路]]></title>
-    <link href="http://jzqt.github.io/2015/10/20/Witcoder%E5%BC%80%E5%8F%91%E4%B9%8B%E8%B7%AF/"/>
-    <id>http://jzqt.github.io/2015/10/20/Witcoder开发之路/</id>
-    <published>2015-10-20T04:10:28.000Z</published>
-    <updated>2015-10-20T17:11:45.802Z</updated>
-    <content type="html"><![CDATA[<p>想做一个Virtual Judge网站。<br>从大二的寒假这个想法开始萌芽到现在大三将它作为软件工程的实践项目来立项，已经有一个多学期了。</p>
-<p>这一个多学期我都在步步准备，我当初简单想做个VJ的想法也在步步完善。<br>现在已经成功在软件工程课中将它作为实践项目，可以光明正大正正经经和小伙伴们一起实现自己的想法了。<br>这个软件工程课的开始就是Witcoder的开始，但是这个课的结束绝不是Witcoder的结束。</p>
-<p>从开始立项到现在为止已经有四周了，开发的过程中有很多有趣的事情，所以我打算写些文章将它们记录下来。</p>
-<p>恩，这个系列就叫做<code>Witcoder开发之路</code>好了。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>想做一个Virtual Judge网站。<br>从大二的寒假这个想法开始萌芽到现在大三将它作为软件工程的实践项目来立项，已经有一个多学期了。</p>
-<p>这一个多学期我都在步步准备，我当初简单想做个VJ的想法也在步步完善。<br>现在已经成功在软件工程课中将它作为实践项目]]>
-    </summary>
-    
-      <category term="Witcoder" scheme="http://jzqt.github.io/tags/Witcoder/"/>
-    
-      <category term="杂记" scheme="http://jzqt.github.io/tags/%E6%9D%82%E8%AE%B0/"/>
-    
-      <category term="Witcoder开发之路" scheme="http://jzqt.github.io/categories/Witcoder%E5%BC%80%E5%8F%91%E4%B9%8B%E8%B7%AF/"/>
     
   </entry>
   

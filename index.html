@@ -252,19 +252,23 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/2015/10/20/色彩的纠结（比赛训练状态标签）/" title="色彩的纠结（比赛训练状态标签）" itemprop="url">
+    <a href="/2015/07/21/ACM图论之存图方式/" title="ACM图论之存图方式" itemprop="url">
   
-    <h1 itemprop="name">色彩的纠结（比赛训练状态标签）</h1>
+    <h1 itemprop="name">ACM图论之存图方式</h1>
     
      
-           <p itemprop="description" >Witcoder的比赛训练有三种状态。分别是未开始，进行中和已结束。
-可是，在选择颜色代表它们的时候，我们陷入了纠结。下面是几种考虑的方案。
+           <p itemprop="description" >对于ACM图论方面的题目总是免不了首先要建图存图，使用合适的存图方式不但是AC的必要条件，解题事半功倍。
+以下主要分析三种常见的存图方式的优缺点以及代码实现
 
-后面还有很多，就不按照颜色排列组合一一上图了。反正就是这样。
-对于已结束这个标签，基本是比较好选择的。最开始我们选择的是红色的标签。后来</p>
+邻接矩阵
+邻接表
+链式前向星
+
+邻接矩阵邻接矩阵是三种存图方式中最简单也最为暴力的一种存图方式了。
+存图思想使用一个矩阵</p>
         
     
-    <time datetime="2015-10-20T04:17:08.000Z" itemprop="datePublished">2015-10-20</time>
+    <time datetime="2015-07-20T16:00:00.000Z" itemprop="datePublished">2015-07-21</time>
   </a>
 </section>
 
@@ -276,17 +280,18 @@
   
 <section class="post" itemscope itemprop="blogitem">
   
-    <a href="/2015/10/20/一个像素的问题/" title="一个像素的问题" itemprop="url">
+    <a href="/2015/06/30/Markdown中写数学公式/" title="Markdown中写数学公式" itemprop="url">
   
-    <h1 itemprop="name">一个像素的问题</h1>
+    <h1 itemprop="name">Markdown中写数学公式</h1>
     
      
-           <p itemprop="description" >下面这个故事，需要眼睛好点的人才能看懂（并不是说近视眼就算眼睛不好，主要是要眼尖，比如我虽然近视，但是眼尖）。
-开始
-上面是Witcoder的导航栏。看到了没有？有没有发现？没错，首页的下面有一个像素的线没有被染成和首页一样的灰色！（看不出来的眼睛都不尖～～）其实这个问题很久以前</p>
+           <p itemprop="description" >一些扩展的Markdown语法支持采用LaTex语法写数学公式，而在网页中使用Mathjax插件来显示数学公式。
+本教程介绍如何在Markdown中书写数学公式。
+插入数学公式在Markdown中插入数学公式的语法是$数学公式$和$$数学公式$$。
+行内公式是可以让公式在文中与文</p>
         
     
-    <time datetime="2015-10-20T04:15:54.000Z" itemprop="datePublished">2015-10-20</time>
+    <time datetime="2015-06-30T06:58:13.000Z" itemprop="datePublished">2015-06-30</time>
   </a>
 </section>
 
@@ -295,10 +300,6 @@
 
 
 
-
-  <nav id="page-nav" class="clearfix unexpand">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next<span></span></a>
-  </nav>
 
 </div>
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
@@ -313,10 +314,6 @@
 		<ul>
 		
 		  
-			<li><a href="/categories/Witcoder开发之路/" title="Witcoder开发之路">Witcoder开发之路<sup>4</sup></a></li>
-		  
-		
-		  
 			<li><a href="/categories/备忘/" title="备忘">备忘<sup>2</sup></a></li>
 		  
 		
@@ -325,7 +322,7 @@
 		  
 		
 		  
-			<li><a href="/categories/程序设计/" title="程序设计">程序设计<sup>5</sup></a></li>
+			<li><a href="/categories/程序设计/" title="程序设计">程序设计<sup>6</sup></a></li>
 		  
 		
 		  
@@ -346,18 +343,6 @@
 			
 		
 			
-				<li><a href="/tags/杂记/" title="杂记">杂记<sup>4</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/Witcoder/" title="Witcoder">Witcoder<sup>4</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/数据库/" title="数据库">数据库<sup>2</sup></a></li>
-			
-		
-			
 				<li><a href="/tags/Tornado/" title="Tornado">Tornado<sup>2</sup></a></li>
 			
 		
@@ -366,7 +351,7 @@
 			
 		
 			
-				<li><a href="/tags/算法与数据结构/" title="算法与数据结构">算法与数据结构<sup>1</sup></a></li>
+				<li><a href="/tags/数据库/" title="数据库">数据库<sup>2</sup></a></li>
 			
 		
 			
@@ -374,7 +359,15 @@
 			
 		
 			
-				<li><a href="/tags/SQL/" title="SQL">SQL<sup>1</sup></a></li>
+				<li><a href="/tags/杂记/" title="杂记">杂记<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/ORM/" title="ORM">ORM<sup>1</sup></a></li>
+			
+		
+			
+				<li><a href="/tags/算法与数据结构/" title="算法与数据结构">算法与数据结构<sup>1</sup></a></li>
 			
 		
 			
@@ -398,7 +391,7 @@
 			
 		
 			
-				<li><a href="/tags/ORM/" title="ORM">ORM<sup>1</sup></a></li>
+				<li><a href="/tags/SQL/" title="SQL">SQL<sup>1</sup></a></li>
 			
 		
 		</ul>
