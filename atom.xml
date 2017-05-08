@@ -46,8 +46,8 @@
     <link href="http://jzqt.github.io/2017/01/16/tornado%E4%B8%AD%E4%BD%BF%E7%94%A8aiohttp%E7%9A%84ClientSession%E5%87%BA%E7%8E%B0%E5%BC%82%E5%B8%B8%E7%9A%84%E4%B8%80%E4%B8%AA%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
     <id>http://jzqt.github.io/2017/01/16/tornado中使用aiohttp的ClientSession出现异常的一个解决办法/</id>
     <published>2017-01-16T10:22:27.000Z</published>
-    <updated>2017-01-21T15:16:09.509Z</updated>
-    <content type="html"><![CDATA[<p>自从<code>Python 3.5</code>之后允许<code>async/await</code>关键字来定义原生<strong>协程</strong>之后，<code>aiohttp</code>等基于<code>asyncio</code>标准库的异步库就在蓬勃发展。<br><code>tornado</code>也对<code>async/await</code>关键字定义的原生协程做了一定的兼容。<br>由于<code>tornado</code>的<code>httpclient</code>功能不太强大（比如不支持cookie保持回话等）。<br>所以我打算使用<code>aiohttp</code>里面的<code>ClientSession</code>来做HTTP客户端。</p>
+    <updated>2017-05-08T10:21:48.554Z</updated>
+    <content type="html"><![CDATA[<h1 id="正文">正文</h1><p>自从<code>Python 3.5</code>之后允许<code>async/await</code>关键字来定义原生<strong>协程</strong>之后，<code>aiohttp</code>等基于<code>asyncio</code>标准库的异步库就在蓬勃发展。<br><code>tornado</code>也对<code>async/await</code>关键字定义的原生协程做了一定的兼容。<br>由于<code>tornado</code>的<code>httpclient</code>功能不太强大（比如不支持cookie保持回话等）。<br>所以我打算使用<code>aiohttp</code>里面的<code>ClientSession</code>来做HTTP客户端。</p>
 <p>不过在使用的过程中发现在<code>tornado</code>中使用<code>aiohttp</code>的会有些问题。</p>
 <p>示例如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> aiohttp</span><br><span class="line"><span class="keyword">import</span> tornado.web</span><br><span class="line"><span class="keyword">from</span> tornado.platform.asyncio <span class="keyword">import</span> AsyncIOMainLoop</span><br><span class="line"></span><br><span class="line">session = aiohttp.ClientSession()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainHandler</span><span class="params">(tornado.web.RequestHandler)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">async</span> <span class="keyword">with</span> session.get(<span class="string">"http://baidu.com"</span>) <span class="keyword">as</span> res:</span><br><span class="line">            text = <span class="keyword">await</span> res.text()</span><br><span class="line">        self.write(text)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    AsyncIOMainLoop().install()     <span class="comment"># 使用asyncio的事件循环</span></span><br><span class="line">    app = tornado.web.Application([(<span class="string">r"/"</span>, MainHandler)])</span><br><span class="line">    app.listen(<span class="number">8888</span>)</span><br><span class="line">    asyncio.get_event_loop().run_forever()</span><br></pre></td></tr></table></figure>
@@ -61,9 +61,12 @@
 <p>这样解决的话代码还是有点丑陋，其实可以写成一个装饰器来完成这部分的兼容，代码如下：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python3</span></span><br><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"><span class="keyword">import</span> functools</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> aiohttp</span><br><span class="line"><span class="keyword">import</span> tornado.web</span><br><span class="line"><span class="keyword">from</span> tornado.platform.asyncio <span class="keyword">import</span> AsyncIOMainLoop</span><br><span class="line"></span><br><span class="line">session = aiohttp.ClientSession()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">convert_asyncio_task</span><span class="params">(method)</span>:</span></span><br><span class="line"><span class="decorator">    @functools.wraps(method)</span></span><br><span class="line">    <span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">        coro = method(self, *args, **kwargs)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">await</span> asyncio.get_event_loop().create_task(coro)</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MainHandler</span><span class="params">(tornado.web.RequestHandler)</span>:</span></span><br><span class="line"></span><br><span class="line"><span class="decorator">    @convert_asyncio_task</span></span><br><span class="line">    <span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">get</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">async</span> <span class="keyword">with</span> session.get(<span class="string">"http://baidu.com"</span>) <span class="keyword">as</span> res:</span><br><span class="line">            text = <span class="keyword">await</span> res.text()</span><br><span class="line">        self.write(text)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    AsyncIOMainLoop().install()</span><br><span class="line">    app = tornado.web.Application([(<span class="string">r"/"</span>, MainHandler)])</span><br><span class="line">    app.listen(<span class="number">8888</span>)</span><br><span class="line">    asyncio.get_event_loop().run_forever()</span><br></pre></td></tr></table></figure>
 <p>这么解决就比较完美了，等到<code>tornado</code>可以无缝兼容<code>asyncio</code>的协程以及<code>aiohttp</code>的HTTP客户端操作的时候再将装饰器去掉即可。</p>
+<h1 id="更新">更新</h1><p>之前的解决方案其实不太<strong>干净</strong>，正确的方式不是将协程转换为<code>Task</code>，我认为转换为<code>Future</code>才是更符合的，新的装饰器代码如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">convert_asyncio_task</span><span class="params">(method)</span>:</span></span><br><span class="line"><span class="decorator">    @functools.wraps(method)</span></span><br><span class="line">    <span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span><span class="params">(self, *args, **kwargs)</span>:</span></span><br><span class="line">        coro = method(self, *args, **kwargs)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">await</span> asyncio.ensure_future(coro)</span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br></pre></td></tr></table></figure>
+<p>这样还避免了之前的解决方案中限定了ioloop的问题。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>自从<code>Python 3.5</code>之后允许<code>async/await</code>关键字来定义原生<strong>协程</strong>之后，<code>aiohttp</code>等基于<code>asyncio</code>标准库的异步库就在蓬勃]]>
+    <![CDATA[<h1 id="正文">正文</h1><p>自从<code>Python 3.5</code>之后允许<code>async/await</code>关键字来定义原生<strong>协程</strong>之后，<code>aiohttp</code>等基于<code>asynci]]>
     </summary>
     
       <category term="Python" scheme="http://jzqt.github.io/tags/Python/"/>
@@ -461,7 +464,7 @@
     <link href="http://jzqt.github.io/2015/06/30/Markdown%E4%B8%AD%E5%86%99%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/"/>
     <id>http://jzqt.github.io/2015/06/30/Markdown中写数学公式/</id>
     <published>2015-06-30T06:58:13.000Z</published>
-    <updated>2015-10-20T17:10:41.650Z</updated>
+    <updated>2017-04-18T14:08:25.722Z</updated>
     <content type="html"><![CDATA[<p>一些扩展的<code>Markdown</code>语法支持采用<code>LaTex</code>语法写数学公式，而在网页中使用<code>Mathjax</code>插件来显示数学公式。</p>
 <p>本教程介绍<strong>如何在Markdown中书写数学公式</strong>。</p>
 <h1 id="插入数学公式">插入数学公式</h1><p>在Markdown中插入数学公式的语法是<code>$数学公式$</code>和<code>$$数学公式$$</code>。</p>
@@ -560,7 +563,7 @@
 <th style="text-align:center">代码</th>
 <th style="text-align:center">大写</th>
 <th style="text-align:center">代码</th>
-<th style="text-align:left">小写</th>
+<th style="text-align:center">小写</th>
 </tr>
 </thead>
 <tbody>
@@ -568,145 +571,145 @@
 <td style="text-align:center"><code>A</code></td>
 <td style="text-align:center">$A$</td>
 <td style="text-align:center"><code>\alpha</code></td>
-<td style="text-align:left">$\alpha$</td>
+<td style="text-align:center">$\alpha$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>B</code></td>
 <td style="text-align:center">$B$</td>
 <td style="text-align:center"><code>\beta</code></td>
-<td style="text-align:left">$\beta$</td>
+<td style="text-align:center">$\beta$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>\Gamma</code></td>
 <td style="text-align:center">$\Gamma$</td>
 <td style="text-align:center"><code>\gamma</code></td>
-<td style="text-align:left">$\gamma$</td>
+<td style="text-align:center">$\gamma$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>\Delta</code></td>
 <td style="text-align:center">$\Delta$</td>
 <td style="text-align:center"><code>\delta</code></td>
-<td style="text-align:left">$\delta$</td>
+<td style="text-align:center">$\delta$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>E</code></td>
 <td style="text-align:center">$E$</td>
 <td style="text-align:center"><code>\epsilon</code></td>
-<td style="text-align:left">$\epsilon$</td>
+<td style="text-align:center">$\epsilon$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>Z</code></td>
 <td style="text-align:center">$Z$</td>
 <td style="text-align:center"><code>\zeta</code></td>
-<td style="text-align:left">$\zeta$</td>
+<td style="text-align:center">$\zeta$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>H</code></td>
 <td style="text-align:center">$H$</td>
 <td style="text-align:center"><code>\eta</code></td>
-<td style="text-align:left">$\eta$</td>
+<td style="text-align:center">$\eta$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>\Theta</code></td>
 <td style="text-align:center">$\Theta$</td>
 <td style="text-align:center"><code>\theta</code></td>
-<td style="text-align:left">$\theta$</td>
+<td style="text-align:center">$\theta$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>I</code></td>
 <td style="text-align:center">$I$</td>
 <td style="text-align:center"><code>\iota</code></td>
-<td style="text-align:left">$\iota$</td>
+<td style="text-align:center">$\iota$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>K</code></td>
 <td style="text-align:center">$K$</td>
 <td style="text-align:center"><code>\kappa</code></td>
-<td style="text-align:left">$\kappa$</td>
+<td style="text-align:center">$\kappa$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>\Lambda</code></td>
 <td style="text-align:center">$\Lambda$</td>
 <td style="text-align:center"><code>\lambda</code></td>
-<td style="text-align:left">$\lambda$</td>
+<td style="text-align:center">$\lambda$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>M</code></td>
 <td style="text-align:center">$M$</td>
 <td style="text-align:center"><code>\mu</code></td>
-<td style="text-align:left">$\mu$</td>
+<td style="text-align:center">$\mu$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>N</code></td>
 <td style="text-align:center">$N$</td>
 <td style="text-align:center"><code>\nu</code></td>
-<td style="text-align:left">$\nu$</td>
+<td style="text-align:center">$\nu$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>\Xi</code></td>
 <td style="text-align:center">$\Xi$</td>
 <td style="text-align:center"><code>\xi</code></td>
-<td style="text-align:left">$\xi$</td>
+<td style="text-align:center">$\xi$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>O</code></td>
 <td style="text-align:center">$O$</td>
 <td style="text-align:center"><code>\omicron</code></td>
-<td style="text-align:left">$\omicron$</td>
+<td style="text-align:center">$\omicron$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>\Pi</code></td>
 <td style="text-align:center">$\Pi$</td>
 <td style="text-align:center"><code>\pi</code></td>
-<td style="text-align:left">$\pi$</td>
+<td style="text-align:center">$\pi$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>P</code></td>
 <td style="text-align:center">$P$</td>
 <td style="text-align:center"><code>\rho</code></td>
-<td style="text-align:left">$\rho$</td>
+<td style="text-align:center">$\rho$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>\Sigma</code></td>
 <td style="text-align:center">$\Sigma$</td>
 <td style="text-align:center"><code>\sigma</code></td>
-<td style="text-align:left">$\sigma$</td>
+<td style="text-align:center">$\sigma$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>T</code></td>
 <td style="text-align:center">$T$</td>
 <td style="text-align:center"><code>\tau</code></td>
-<td style="text-align:left">$\tau$</td>
+<td style="text-align:center">$\tau$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>\Upsilon</code></td>
 <td style="text-align:center">$\Upsilon$</td>
 <td style="text-align:center"><code>\upsilon</code></td>
-<td style="text-align:left">$\upsilon$</td>
+<td style="text-align:center">$\upsilon$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>\Phi</code></td>
 <td style="text-align:center">$\Phi$</td>
 <td style="text-align:center"><code>\phi</code></td>
-<td style="text-align:left">$\phi$</td>
+<td style="text-align:center">$\phi$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>X</code></td>
 <td style="text-align:center">$X$</td>
 <td style="text-align:center"><code>\chi</code></td>
-<td style="text-align:left">$\chi$</td>
+<td style="text-align:center">$\chi$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>\Psi</code></td>
 <td style="text-align:center">$\Psi$</td>
 <td style="text-align:center"><code>\psi</code></td>
-<td style="text-align:left">$\psi$</td>
+<td style="text-align:center">$\psi$</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>\Omega</code></td>
 <td style="text-align:center">$\Omega$</td>
 <td style="text-align:center"><code>\omega</code></td>
-<td style="text-align:left">$\omega$</td>
+<td style="text-align:center">$\omega$</td>
 </tr>
 </tbody>
 </table>
